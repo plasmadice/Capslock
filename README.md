@@ -1,6 +1,5 @@
 # CapsLock
 
-> *Make CapsLock Great Again!*
 >
 > [中文文档](docs/zh-cn/) | [EN DOCS](http://capslock.vonng.com/) | [Karabiner Gallery](https://ke-complex-modifications.pqrs.org/#caps_lock_enhancement) | [Github Repo](https://github.com/Vonng/Capslock) | [Import URL](karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/Vonng/Capslock/master/mac_v3/capslock.json)
 >

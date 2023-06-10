@@ -3,12 +3,9 @@
     <!-- Introduction -->
     <item>
         <name style="important">CapsLock Enhancement</name>
-        <appendix></appendix>
-        <appendix>Make CapsLock Great Again!</appendix>
-        <appendix></appendix>
-        <appendix>※Author: Vonng (fengruohang@outlook.com)</appendix>
-        <appendix>※Document: https://github.com/Vonng/Capslock/tree/master/osx</appendix>
-        <appendix>※Environment: Mac OS X darwin64 via Karabiner</appendix>
+        <appendix>※Author: Plasmadice (github/plasmadice)</appendix>
+        <appendix>※Document: https://github.com/plasmadice</appendix>
+        <appendix>※Environment: Mac OS X Ventura via Karabiner</appendix>
         <appendix>※License: WTFPL</appendix>
         <appendix>※Prequisite: Maps ⇪CapsLock to F19(KeyCode:80) first. (via Seil)</appendix>
     </item>

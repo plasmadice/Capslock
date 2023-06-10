@@ -2,8 +2,6 @@
 
 # Capslock <small>v3.0.3</small>
 
-<b>Make CapsLock Great Again!</b>
-
 - Transform ⇪CapsLock into a powerful ✱Hyper modifier
 - Miraculously increases your work productivity!
 - Powered by [Karabiner-Elements](https://karabiner-elements.pqrs.org/)

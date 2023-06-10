@@ -1,8 +1,6 @@
 # Capslock
 
-*Make CapsLock Great Again!*  
-
-![](images/trump.jpg)
+[Placeholder Intro]
 
 
 
