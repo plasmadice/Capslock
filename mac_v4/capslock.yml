@@ -24,10 +24,10 @@ rules:
         from: { key_code: escape, modifiers: { optional: [ caps_lock ], mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: caps_lock , modifiers: [ left_control ] } ]
 
-      - description: 'spacebar = language switch'
-        type: basic
-        from: { key_code: spacebar, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: spacebar , modifiers: [ left_control ] } ]
+      # - description: 'spacebar = language switch'
+      #   type: basic
+      #   from: { key_code: spacebar, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { key_code: spacebar , modifiers: [ left_control ] } ]
 
       - description: 'command + spacebar = emoji'
         type: basic
@@ -60,7 +60,7 @@ rules:
       - description: 'shift + h = ctrl + shift + tab (prev tab)'
         type: basic
         from: { key_code: h, modifiers: { mandatory: [ left_shift ,right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: tab , modifiers: [ left_control , left_shift ] } ]
+        to: [ { key_code: open_bracket , modifiers: [ left_command, left_shift ] } ]
 
       # control: desktop management
       - description: 'control + h = ctrl + left (prev desktop)'
@@ -234,7 +234,7 @@ rules:
       - description: 'shift + l = command + tab (next tab)'
         type: basic
         from: { key_code: l, modifiers: { mandatory: [ left_shift ,right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: tab , modifiers: [ left_control ] } ]
+        to: [ { key_code: close_bracket , modifiers: [ left_command, left_shift ] } ]
 
       # control: desktop management
       - description: 'control + l = ctrl + right (next desktop)'
@@ -596,12 +596,12 @@ rules:
       - description: 'shift + command + up arrow = mouse wheel up fast'
         type: basic
         from: { key_code: up_arrow, modifiers: { mandatory: [ left_shift,left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { mouse_key: { vertical_wheel: 256 } } ]
+        to: [ { mouse_key: { vertical_wheel: -256 } } ]
 
       - description: 'shift + command + down arrow = mouse wheel down fast'
         type: basic
         from: { key_code: down_arrow, modifiers: { mandatory: [ left_shift,left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { mouse_key: { vertical_wheel: -256 } } ]
+        to: [ { mouse_key: { vertical_wheel: 256 } } ]
 
       - description: 'shift + command + left arrow = mouse wheel left fast'
         type: basic
@@ -1227,15 +1227,15 @@ rules:
         from: { key_code: s, modifiers: { mandatory: [ left_option,  right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: grave_accent_and_tilde , modifiers: [ left_command ] } ]
 
-      - description: 'command + s = alter tab sheet rev'
+      - description: 'command + s = alter tab sheet rev (previous tab)'
         type: basic
         from: { key_code: s, modifiers: { mandatory: [ left_command,  right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: tab , modifiers: [ left_control,left_shift ] } ]
+        to: [ { key_code: open_bracket , modifiers: [ left_command, left_shift ] } ]
 
-      - description: 's = alter tab sheet'
+      - description: 's = alter tab sheet (next tab)'
         type: basic
         from: { key_code: s, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: tab , modifiers: [ left_control ] } ]
+        to: [ { key_code: close_bracket , modifiers: [ left_command, left_shift ] } ]
 
 
 
@@ -1260,11 +1260,6 @@ rules:
         from: { key_code: e, modifiers: { mandatory: [ left_option, right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: open -a mail } ]
 
-      - description: 'e = safari'
-        type: basic
-        from: { key_code: e, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a Safari } ]
-
 
       #==========================================================#
       # ( r ) --> iterm / preview / terminal                     #
@@ -1285,13 +1280,8 @@ rules:
         to: [ { shell_command: open -a iTerm } ]
 
       #==========================================================#
-      # ( t ) --> vscode / typora / notes                        #
+      # ( t ) --> vscode / notes                        #
       #==========================================================#
-      - description: 'command + t = typora'
-        type: basic
-        from: { key_code: t, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a Typora } ]
-
       - description: 'option + t = notes'
         type: basic
         from: { key_code: t, modifiers: { mandatory: [ left_option, right_command,right_control,right_shift,right_option ] } }
@@ -1455,7 +1445,7 @@ rules:
       - description: '1 = paste from clip1'
         type: basic
         from: { key_code: '1', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: 'cat ~/.clip1 | pbcopy ' },{ key_code: v, modifiers: [ left_command ] } ]
+        to: [ { shell_command: 'cat ~/.clip1 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
 
       - description: 'command + 2 = copy to clip2'
         type: basic
@@ -1465,7 +1455,7 @@ rules:
       - description: '2 = paste from clip2'
         type: basic
         from: { key_code: '2', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: 'cat ~/.clip2 | pbcopy ' },{ key_code: v, modifiers: [ left_command ] } ]
+        to: [ { shell_command: 'cat ~/.clip2 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
 
       - description: 'command + 3 = copy to clip3'
         type: basic
@@ -1475,7 +1465,7 @@ rules:
       - description: '3 = paste from clip3'
         type: basic
         from: { key_code: '3', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: 'cat ~/.clip3 | pbcopy ' },{ key_code: v, modifiers: [ left_command ] } ]
+        to: [ { shell_command: 'cat ~/.clip3 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
 
       - description: 'command + 4 = copy to clip4'
         type: basic
@@ -1485,7 +1475,7 @@ rules:
       - description: '4 = paste from clip4'
         type: basic
         from: { key_code: '4', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: 'cat ~/.clip4 | pbcopy ' },{ key_code: v, modifiers: [ left_command ] } ]
+        to: [ { shell_command: 'cat ~/.clip4 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
 
       - description: 'command + 5 = copy to clip5'
         type: basic
@@ -1495,7 +1485,7 @@ rules:
       - description: '5 = paste from clip5'
         type: basic
         from: { key_code: '5', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: 'cat ~/.clip5 | pbcopy ' },{ key_code: v, modifiers: [ left_command ] } ]
+        to: [ { shell_command: 'cat ~/.clip5 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
 
       - description: 'command + 6 = copy to clip6'
         type: basic
@@ -1505,7 +1495,7 @@ rules:
       - description: '6 = paste from clip6'
         type: basic
         from: { key_code: '6', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: 'cat ~/.clip6 | pbcopy ' },{ key_code: v, modifiers: [ left_command ] } ]
+        to: [ { shell_command: 'cat ~/.clip6 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
 
       - description: 'command + 7 = copy to clip7'
         type: basic
@@ -1515,7 +1505,7 @@ rules:
       - description: '7 = paste from clip7'
         type: basic
         from: { key_code: '7', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: 'cat ~/.clip7 | pbcopy ' },{ key_code: v, modifiers: [ left_command ] } ]
+        to: [ { shell_command: 'cat ~/.clip7 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
 
       - description: 'command + 8 = copy to clip8'
         type: basic
@@ -1525,7 +1515,7 @@ rules:
       - description: '8 = paste from clip8'
         type: basic
         from: { key_code: '8', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: 'cat ~/.clip8 | pbcopy ' },{ key_code: v, modifiers: [ left_command ] } ]
+        to: [ { shell_command: 'cat ~/.clip8 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
 
       - description: 'command + 9 = copy to clip9'
         type: basic
@@ -1535,7 +1525,7 @@ rules:
       - description: '9 = paste from clip9'
         type: basic
         from: { key_code: '9', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: 'cat ~/.clip9 | pbcopy ' },{ key_code: v, modifiers: [ left_command ] } ]
+        to: [ { shell_command: 'cat ~/.clip9 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
 
       - description: 'command + 0 = copy to clip0'
         type: basic
@@ -1545,7 +1535,7 @@ rules:
       - description: '0 = paste from clip0'
         type: basic
         from: { key_code: '0', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: 'cat ~/.clip0 | pbcopy ' },{ key_code: v, modifiers: [ left_command ] } ]
+        to: [ { shell_command: 'cat ~/.clip0 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
 
 
 
@@ -1794,19 +1784,6 @@ rules:
         to: [ { key_code: volume_increment } ]
 
       #==========================================================#
-      # ~ --> area selection snapshot                            #
-      #==========================================================#
-      - description: 'command + ~ = area snap to desktop file'
-        type: basic
-        from: { key_code: grave_accent_and_tilde, modifiers: { mandatory: [ left_command,  right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: '4' , modifiers: [ left_shift,left_command ] } ]
-
-      - description: '~ = area snap to clipboard'
-        type: basic
-        from: { key_code: grave_accent_and_tilde, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: '4' , modifiers: [ left_shift,left_command,left_control ] } ]
-
-      #==========================================================#
       # Screenshot (F13) --> Screenshot                          #
       #==========================================================#
       - description: 'command + ~ = area snap to desktop file'
@@ -1868,6 +1845,226 @@ rules:
         from: { key_code: page_down, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: volume_decrement, modifiers: [ left_shift, left_option ] } ]
 
+  ################################################################
+  #                       Hyper Application+                     #
+  ################################################################
+  - description: Hyper Application+
+    manipulators:
+
+      - description: 'e = Chrome'
+        type: basic
+        from: { key_code: e, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { shell_command: open -a 'Google Chrome' } ]
+
+  ################################################################
+  #                       Hyper Productivity                     #
+  ################################################################
+  - description: Hyper Productivity
+    manipulators:
 
 
-...
+      ################################################################
+      #                       Browser Additions                      #
+      ################################################################
+      - description: 'shift + w = close tab'
+        type: basic
+        from: { key_code: w, modifiers: { mandatory: [ left_shift,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: w , modifiers: [ left_command ] } ]
+
+      - description: 'command + t = re-open tab'
+        type: basic
+        from: { key_code: t, modifiers: { mandatory: [ left_command,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: t , modifiers: [ left_command,left_shift ] } ]
+
+      ################################################################
+      #                       General MacOS Additions                #
+      ################################################################
+      - description: 'Spoken Content - TTS - Speak Selection'
+        type: basic
+        from: { key_code: a, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: escape , modifiers: [ left_command ] } ]
+
+
+  ################################################################
+  #                       Hyper Terminal+                        #
+  ################################################################
+  - description: Hyper Terminal+
+    manipulators:
+
+
+      ################################################################
+      #                      VSCode Terminal                         #
+      ################################################################
+      - description: 'command + ~ = split terminal (mapped VSCode)'
+        type: basic
+        from: { key_code: grave_accent_and_tilde, modifiers: { mandatory: [ left_option,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: 5 , modifiers: [ left_control,left_shift ] } ]
+
+      - description: 'command + ~ = unsplit terminal (unmapped VSCode)'
+        type: basic
+        from: { key_code: grave_accent_and_tilde, modifiers: { mandatory: [ left_command,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: 4 , modifiers: [ left_control,left_shift ] } ]
+
+      ################################################################
+      #                       General Terminal                       #
+      ################################################################
+      
+      - description: '~ = open Chrome developer console'
+        type: basic
+        from: { key_code: grave_accent_and_tilde, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: j , modifiers: [ left_command,left_option ] } ]
+
+  ################################################################
+  #                       Hyper Knob                             #
+  ################################################################
+  - description: Hyper Knob
+    manipulators:
+
+      ################################################################
+      #                       Browser Control                        #
+      ################################################################
+      - description: 'knob increment = Next Tab'
+        type: basic
+        from: { consumer_key_code: volume_increment, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: close_bracket , modifiers: [ left_command, left_shift ] } ]
+
+      - description: 'knob decrement = Previous Tab'
+        type: basic
+        from: { consumer_key_code: volume_decrement, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: open_bracket , modifiers: [ left_command, left_shift ] } ]
+
+
+      ################################################################
+      #                       Command + Tilde                        #
+      ################################################################
+      - description: 'command + knob increment = Cycle Through Application Forward'
+        type: basic
+        from: { consumer_key_code: volume_increment, modifiers: { mandatory: [ left_command,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: grave_accent_and_tilde , modifiers: [ left_command ] } ]
+
+      - description: 'command + knob decrement = Cycle Through Application Reverse'
+        type: basic
+        from: { consumer_key_code: volume_decrement, modifiers: { mandatory: [ left_command,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: grave_accent_and_tilde , modifiers: [ left_command, left_shift ] } ]
+
+
+      ################################################################
+      #             Cycle Discord Channels / Mouse Scroll            #
+      ################################################################
+      - description: 'option + knob increment = Cycle Channels (Discord) Forward'
+        type: basic
+        from: { consumer_key_code: volume_increment, modifiers: { mandatory: [ left_option,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: down_arrow , modifiers: [ left_option ] } ]
+
+      - description: 'option + knob decrement = Cycle Channels (Discord) Reverse'
+        type: basic
+        from: { consumer_key_code: volume_decrement, modifiers: { mandatory: [ left_option,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: up_arrow , modifiers: [ left_option ] } ]
+
+
+      ################################################################
+      #   Knob + Shift is open   Better Browser Control              #
+      ################################################################
+      # - description: 'shift + knob increment = Cycle Editor Tabs Forward'
+      #   type: basic
+      #   from: { consumer_key_code: volume_increment, modifiers: { mandatory: [ left_shift,right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { key_code: close_bracket , modifiers: [ left_command, left_shift ] } ]
+
+      # - description: 'shift + knob decrement = Cycle Editor Tabs Reverse'
+      #   type: basic
+      #   from: { consumer_key_code: volume_decrement, modifiers: { mandatory: [ left_shift,right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { key_code: open_bracket , modifiers: [ left_command, left_shift ] } ]
+
+
+      ################################################################
+      #                       Knob Press                             #
+      ################################################################
+      - description: 'knob press = Close Tab'
+        type: basic
+        from: { consumer_key_code: mute, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: w , modifiers: [ left_command ] } ]
+
+      - description: 'command + knob press = Re-open Tab'
+        type: basic
+        from: { consumer_key_code: mute, modifiers: { mandatory: [ left_command,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: t , modifiers: [ left_command, left_shift ] } ]
+
+      - description: 'knob press = Close Tab'
+        type: basic
+        from: { consumer_key_code: mute, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: w , modifiers: [ left_command ] } ]
+
+      - description: 'knob press = Close Tab'
+        type: basic
+        from: { consumer_key_code: mute, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: w , modifiers: [ left_command ] } ]
+
+
+  ################################################################
+  #                       Hyper Knob+                            #
+  ################################################################
+  - description: Hyper Knob+
+    manipulators:
+
+      - description: 'control + shift + knob increment = Custom HotKey (Double Hyper 9)'
+        type: basic
+        from: { consumer_key_code: volume_increment, modifiers: { mandatory: [ left_control,left_shift,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: keypad_9 , modifiers: [ left_command,left_control,left_shift,left_option ] } ]
+
+      - description: 'control + shift + knob decrement = Custom HotKey (Double Hyper 8)'
+        type: basic
+        from: { consumer_key_code: volume_decrement, modifiers: { mandatory: [ left_control,left_shift,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: keypad_8 , modifiers: [ left_command,left_control,left_shift,left_option ] } ]
+
+
+  ################################################################
+  #                       Hyper Free Keys                        #
+  ################################################################
+  - description: Hyper Free Keys
+    manipulators:
+
+      ################################################################
+      #          Keyboard Maestro Toggle Light/Dark Mode             #
+      ################################################################
+      - description: 'Forward Del + Command + Control + Shift + Option = Custom Hotkey (Double Hyper 0)'
+        type: basic
+        from: { key_code: delete_forward, modifiers: { mandatory: [ left_command,left_control,left_shift,left_option,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: keypad_0 , modifiers: [ left_command,left_control,left_shift,left_option ] } ]
+
+      ################################################################
+      #                delete_forward Free Keys                      #
+      ################################################################
+      - description: 'Forward Del = Custom Hotkey (Hyper + Del)'
+        type: basic
+        from: { key_code: delete_forward, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: delete_forward , modifiers: [ left_command,left_control,left_shift,left_option ] } ]
+
+      - description: 'Command + Forward Del = Custom Hotkey (Shift + Command + Del)'
+        type: basic
+        from: { key_code: delete_forward, modifiers: { mandatory: [ left_command,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: delete_forward , modifiers: [ left_command,left_shift ] } ]
+
+      - description: 'Control + Forward Del = Custom Hotkey (Shift + Control + Del)'
+        type: basic
+        from: { key_code: delete_forward, modifiers: { mandatory: [ left_control,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: delete_forward , modifiers: [ left_control,left_shift ] } ]
+
+      - description: 'Option + Forward Del = Custom Hotkey (Shift + Option + Del)'
+        type: basic
+        from: { key_code: delete_forward, modifiers: { mandatory: [ left_option,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: delete_forward , modifiers: [ left_shift,left_option ] } ]
+
+      - description: 'Shift + Forward Del = Custom Hotkey (Shift + Del)'
+        type: basic
+        from: { key_code: delete_forward, modifiers: { mandatory: [ left_shift,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: delete_forward , modifiers: [ left_shift ] } ]
+
+      - description: 'Control + Option + Forward Del = Custom Hotkey (Control + Option + keypad_0)'
+        type: basic
+        from: { key_code: delete_forward, modifiers: { mandatory: [ left_control,left_option,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: keypad_0 , modifiers: [ left_control,left_shift ] } ]
+
+      - description: 'Control + Shift + Forward Del = Custom Hotkey (Control + Shift + keypad_1)'
+        type: basic
+        from: { key_code: delete_forward, modifiers: { mandatory: [ left_control,left_shift,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: keypad_1 , modifiers: [ left_control,left_shift ] } ]
