@@ -27,12 +27,14 @@
                 "right_command",
                 "right_control",
                 "right_option"
-              ]
+              ],
+              "lazy": true
             }
           ],
           "to_if_alone": [
             {
-              "key_code": "escape"
+              "key_code": "escape",
+              "lazy": true
             }
           ]
         },
