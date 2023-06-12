@@ -1311,7 +1311,7 @@ rules:
         to: [ { shell_command: open -a Siri } ]
 
       #==========================================================#
-      # ( f ) --> alfred 4 / Dash / Dictionary                   #
+      # ( f ) --> alfred 5 / Dash / Dictionary                   #
       #==========================================================#
       - description: 'command + f = Dash'
         type: basic
@@ -1323,10 +1323,10 @@ rules:
         from: { key_code: f, modifiers: { mandatory: [ left_option, right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: open -a Dictionary } ]
 
-      - description: 'f = Alfred 4'
+      - description: 'f = Alfred 5'
         type: basic
         from: { key_code: f, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a 'Alfred 4' } ]
+        to: [ { shell_command: open -a 'Alfred 5' } ]
 
       #==========================================================#
       # ( g ) --> idea / chrome / calender                       #
@@ -1898,12 +1898,12 @@ rules:
       - description: 'command + ~ = split terminal (mapped VSCode)'
         type: basic
         from: { key_code: grave_accent_and_tilde, modifiers: { mandatory: [ left_option,right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: 5 , modifiers: [ left_control,left_shift ] } ]
+        to: [ { key_code: '5' , modifiers: [ left_control,left_shift ] } ]
 
       - description: 'command + ~ = unsplit terminal (unmapped VSCode)'
         type: basic
         from: { key_code: grave_accent_and_tilde, modifiers: { mandatory: [ left_command,right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: 4 , modifiers: [ left_control,left_shift ] } ]
+        to: [ { key_code: '4' , modifiers: [ left_control,left_shift ] } ]
 
       ################################################################
       #                       General Terminal                       #
