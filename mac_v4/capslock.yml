@@ -1184,8 +1184,7 @@ rules:
       - description: 'command + w = close all tab of app'
         type: basic
         from: { key_code: w, modifiers: { mandatory: [ left_command,  right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: w , modifiers: [ left_command ] } ]
-        # to: [ { key_code: w , modifiers: [ left_command,left_option ] } ]  # TODO: May not work
+        to: [ { key_code: w , modifiers: [ left_command, left_shift ] } ]
 
       - description: 'w = close tab'
         type: basic

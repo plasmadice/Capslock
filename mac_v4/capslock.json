@@ -4554,7 +4554,8 @@
             {
               "key_code": "w",
               "modifiers": [
-                "left_command"
+                "left_command",
+                "left_shift"
               ]
             }
           ]
