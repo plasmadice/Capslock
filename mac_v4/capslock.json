@@ -4753,27 +4753,6 @@
       "description": "Hyper Application",
       "manipulators": [
         {
-          "description": "command + e = finder",
-          "type": "basic",
-          "from": {
-            "key_code": "e",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "open -a finder"
-            }
-          ]
-        },
-        {
           "description": "option + e = mail",
           "type": "basic",
           "from": {
@@ -5017,28 +4996,7 @@
           },
           "to": [
             {
-              "shell_command": "open -a 'Alfred 5'"
-            }
-          ]
-        },
-        {
-          "description": "command + g = Chrome",
-          "type": "basic",
-          "from": {
-            "key_code": "g",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "open -a 'Google Chrome'"
+              "shell_command": "open -g -a 'Alfred 5'"
             }
           ]
         },
@@ -5060,26 +5018,6 @@
           "to": [
             {
               "shell_command": "open -a Calendar"
-            }
-          ]
-        },
-        {
-          "description": "g = Intellij IDEA",
-          "type": "basic",
-          "from": {
-            "key_code": "g",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "open -a 'IntelliJ IDEA'"
             }
           ]
         }
@@ -6228,47 +6166,6 @@
               ]
             }
           ]
-        },
-        {
-          "description": "command + quote = equal_sign",
-          "type": "basic",
-          "from": {
-            "key_code": "quote",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "equal_sign"
-            }
-          ]
-        },
-        {
-          "description": "quote = equal_sign",
-          "type": "basic",
-          "from": {
-            "key_code": "quote",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "equal_sign"
-            }
-          ]
         }
       ]
     },
@@ -6857,6 +6754,36 @@
       ]
     },
     {
+      "description": "Hyper Sensible",
+      "manipulators": [
+        {
+          "description": "command + e = shift + command + e",
+          "type": "basic",
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "e",
+              "modifiers": [
+                "left_command",
+                "left_shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "Hyper Productivity",
       "manipulators": [
         {
@@ -6926,7 +6853,7 @@
             {
               "key_code": "escape",
               "modifiers": [
-                "left_command"
+                "left_control"
               ]
             }
           ]
@@ -7522,6 +7449,107 @@
               "key_code": "keypad_1",
               "modifiers": [
                 "left_control",
+                "left_shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Hyper Navigation+",
+      "manipulators": [
+        {
+          "description": "g = option + left (word-length left)",
+          "type": "basic",
+          "from": {
+            "key_code": "g",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "command + g = option + shift + left (word-length selection left)",
+          "type": "basic",
+          "from": {
+            "key_code": "g",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "left_option",
+                "left_shift"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "quote = option + right (word-length right)",
+          "type": "basic",
+          "from": {
+            "key_code": "quote",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "command + quote = option + shift + right (word-length selection right)",
+          "type": "basic",
+          "from": {
+            "key_code": "quote",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "left_option",
                 "left_shift"
               ]
             }

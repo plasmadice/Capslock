@@ -1247,13 +1247,8 @@ rules:
 
 
       #==========================================================#
-      # ( e ) --> safari / finder / mail                         #
+      # ( e ) --> safari / mail                         #
       #==========================================================#
-      - description: 'command + e = finder'
-        type: basic
-        from: { key_code: e, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a finder } ]
-
       - description: 'option + e = mail'
         type: basic
         from: { key_code: e, modifiers: { mandatory: [ left_option, right_command,right_control,right_shift,right_option ] } }
@@ -1325,25 +1320,15 @@ rules:
       - description: 'f = Alfred 5'
         type: basic
         from: { key_code: f, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a 'Alfred 5' } ]
+        to: [ { shell_command: open -g -a 'Alfred 5' } ]
 
       #==========================================================#
-      # ( g ) --> idea / chrome / calender                       #
+      # ( g ) --> idea / calender                       #
       #==========================================================#
-      - description: 'command + g = Chrome'
-        type: basic
-        from: { key_code: g, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a 'Google Chrome' } ]
-
       - description: 'option + g = Calender'
         type: basic
         from: { key_code: g, modifiers: { mandatory: [ left_option, right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: open -a Calendar } ]
-
-      - description: 'g = Intellij IDEA'
-        type: basic
-        from: { key_code: g, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a 'IntelliJ IDEA' } ]
 
 
 
@@ -1612,7 +1597,7 @@ rules:
         type: basic
         from: { key_code: equal_sign, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: equal_sign , modifiers: [ left_command ] } ]
-
+        
       - description: 'equal_sign = +'
         type: basic
         from: { key_code: equal_sign, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
@@ -1679,18 +1664,6 @@ rules:
         type: basic
         from: { key_code: semicolon, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: semicolon , modifiers: [ left_shift ] } ]
-
-      - description: 'command + quote = equal_sign'
-        type: basic
-        from: { key_code: quote, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: equal_sign } ]
-
-      - description: 'quote = equal_sign'
-        type: basic
-        from: { key_code: quote, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: equal_sign } ]
-
-
 
 
   ################################################################
@@ -1856,6 +1829,17 @@ rules:
         to: [ { shell_command: open -a 'Google Chrome' } ]
 
   ################################################################
+  #                       Hyper Sensible                         #
+  ################################################################
+  - description: Hyper Sensible
+    manipulators:
+      - description: 'command + e = shift + command + e'
+        type: basic
+        from: { key_code: e, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: e , modifiers: [ left_command,left_shift ] } ]
+
+
+  ################################################################
   #                       Hyper Productivity                     #
   ################################################################
   - description: Hyper Productivity
@@ -1881,7 +1865,7 @@ rules:
       - description: 'Spoken Content - TTS - Speak Selection'
         type: basic
         from: { key_code: a, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: escape , modifiers: [ left_command ] } ]
+        to: [ { key_code: escape , modifiers: [ left_control ] } ]
 
 
   ################################################################
@@ -2067,3 +2051,34 @@ rules:
         type: basic
         from: { key_code: delete_forward, modifiers: { mandatory: [ left_control,left_shift,right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: keypad_1 , modifiers: [ left_control,left_shift ] } ]
+
+
+  ################################################################
+  #                       Hyper Navigation+                       #
+  ################################################################
+  - description: Hyper Navigation+
+    manipulators:
+
+      # normal: cursor move word length left
+      - description: 'g = option + left (word-length left)'
+        type: basic
+        from: { key_code: g, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: left_arrow , modifiers: [ left_option ] } ]
+
+      # command: word selection left
+      - description: 'command + g = option + shift + left (word-length selection left)'
+        type: basic
+        from: { key_code: g, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: left_arrow , modifiers: [ left_option, left_shift ] } ]
+
+      # normal: cursor move word length right
+      - description: 'quote = option + right (word-length right)'
+        type: basic
+        from: { key_code: quote, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: right_arrow , modifiers: [ left_option ] } ]
+
+      # command: word selection left
+      - description: 'command + quote = option + shift + right (word-length selection right)'
+        type: basic
+        from: { key_code: quote, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: right_arrow , modifiers: [ left_option, left_shift ] } ]
