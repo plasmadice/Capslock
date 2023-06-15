@@ -6245,249 +6245,6 @@
           ]
         },
         {
-          "description": "F1 = display_brightness_decrement",
-          "type": "basic",
-          "from": {
-            "key_code": "f1",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "display_brightness_decrement"
-            }
-          ]
-        },
-        {
-          "description": "F2 = display_brightness_increment",
-          "type": "basic",
-          "from": {
-            "key_code": "f2",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "display_brightness_increment"
-            }
-          ]
-        },
-        {
-          "description": "F3 = Expose All",
-          "type": "basic",
-          "from": {
-            "key_code": "f3",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "up_arrow",
-              "modifiers": [
-                "left_control"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "F4 = LaunchPad",
-          "type": "basic",
-          "from": {
-            "key_code": "f4",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "open -a 'Launchpad'"
-            }
-          ]
-        },
-        {
-          "description": "F5 = illumination_decrement",
-          "type": "basic",
-          "from": {
-            "key_code": "f5",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "illumination_decrement"
-            }
-          ]
-        },
-        {
-          "description": "F6 = illumination_increment",
-          "type": "basic",
-          "from": {
-            "key_code": "f6",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "illumination_increment"
-            }
-          ]
-        },
-        {
-          "description": "F7 = rewind",
-          "type": "basic",
-          "from": {
-            "key_code": "f7",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "rewind"
-            }
-          ]
-        },
-        {
-          "description": "F8 = play_or_pause",
-          "type": "basic",
-          "from": {
-            "key_code": "f8",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "play_or_pause"
-            }
-          ]
-        },
-        {
-          "description": "F9 = fastforward",
-          "type": "basic",
-          "from": {
-            "key_code": "f9",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "fastforward"
-            }
-          ]
-        },
-        {
-          "description": "F10 = mute",
-          "type": "basic",
-          "from": {
-            "key_code": "f10",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "mute"
-            }
-          ]
-        },
-        {
-          "description": "F11 = volume_decrement",
-          "type": "basic",
-          "from": {
-            "key_code": "f11",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "volume_decrement"
-            }
-          ]
-        },
-        {
-          "description": "F12 = volume_increment",
-          "type": "basic",
-          "from": {
-            "key_code": "f12",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "volume_increment"
-            }
-          ]
-        },
-        {
           "description": "command + ~ = area snap to desktop file",
           "type": "basic",
           "from": {
@@ -7450,6 +7207,312 @@
               "modifiers": [
                 "left_control",
                 "left_shift"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F1 = Hyper + F1",
+          "type": "basic",
+          "from": {
+            "key_code": "f1",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f1",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F2 = Hyper + F2",
+          "type": "basic",
+          "from": {
+            "key_code": "f2",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f2",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F3 = Hyper + F3",
+          "type": "basic",
+          "from": {
+            "key_code": "f3",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f3",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F4 = Alfred 5",
+          "type": "basic",
+          "from": {
+            "key_code": "f4",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -g -a 'Alfred 5'"
+            }
+          ]
+        },
+        {
+          "description": "F5 = Hyper + F5",
+          "type": "basic",
+          "from": {
+            "key_code": "f5",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f5",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F6 = Hyper + F6",
+          "type": "basic",
+          "from": {
+            "key_code": "f6",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f6",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F7 = Hyper + F7",
+          "type": "basic",
+          "from": {
+            "key_code": "f7",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f7",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F8 = Hyper + F8",
+          "type": "basic",
+          "from": {
+            "key_code": "f8",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f8",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F9 = Hyper + F9",
+          "type": "basic",
+          "from": {
+            "key_code": "f9",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f9",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F10 = Hyper + F10",
+          "type": "basic",
+          "from": {
+            "key_code": "f10",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f10",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F11 = Hyper + F11",
+          "type": "basic",
+          "from": {
+            "key_code": "f11",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f11",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F12 = Hyper + F12",
+          "type": "basic",
+          "from": {
+            "key_code": "f12",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f12",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
               ]
             }
           ]

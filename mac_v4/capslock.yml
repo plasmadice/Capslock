@@ -2120,3 +2120,28 @@ rules:
   #                       Hyper Navigation+                       #
   ################################################################
   - description: Hyper Navigation+
+    manipulators:
+
+      # normal: cursor move word length left
+      - description: 'g = option + left (word-length left)'
+        type: basic
+        from: { key_code: g, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: left_arrow , modifiers: [ left_option ] } ]
+
+      # command: word selection left
+      - description: 'command + g = option + shift + left (word-length selection left)'
+        type: basic
+        from: { key_code: g, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: left_arrow , modifiers: [ left_option, left_shift ] } ]
+
+      # normal: cursor move word length right
+      - description: 'quote = option + right (word-length right)'
+        type: basic
+        from: { key_code: quote, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: right_arrow , modifiers: [ left_option ] } ]
+
+      # command: word selection left
+      - description: 'command + quote = option + shift + right (word-length selection right)'
+        type: basic
+        from: { key_code: quote, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: right_arrow , modifiers: [ left_option, left_shift ] } ]
