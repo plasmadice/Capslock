@@ -1268,11 +1268,6 @@ rules:
         from: { key_code: r, modifiers: { mandatory: [ left_option, right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: open -a terminal } ]
 
-      - description: 'r = iTerm2'
-        type: basic
-        from: { key_code: r, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a iTerm } ]
-
       #==========================================================#
       # ( t ) --> vscode / notes                        #
       #==========================================================#
@@ -1471,55 +1466,55 @@ rules:
         from: { key_code: '5', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: 'cat ~/.clip5 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
 
-      - description: 'command + 6 = copy to clip6'
-        type: basic
-        from: { key_code: '6', modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: c, modifiers: [ left_command ] } , { shell_command: 'pbpaste > ~/.clip6' } ]
+      # - description: 'command + 6 = copy to clip6'
+      #   type: basic
+      #   from: { key_code: '6', modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { key_code: c, modifiers: [ left_command ] } , { shell_command: 'pbpaste > ~/.clip6' } ]
 
-      - description: '6 = paste from clip6'
-        type: basic
-        from: { key_code: '6', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: 'cat ~/.clip6 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
+      # - description: '6 = paste from clip6'
+      #   type: basic
+      #   from: { key_code: '6', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { shell_command: 'cat ~/.clip6 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
 
-      - description: 'command + 7 = copy to clip7'
-        type: basic
-        from: { key_code: '7', modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: c, modifiers: [ left_command ] } , { shell_command: 'pbpaste > ~/.clip7' } ]
+      # - description: 'command + 7 = copy to clip7'
+      #   type: basic
+      #   from: { key_code: '7', modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { key_code: c, modifiers: [ left_command ] } , { shell_command: 'pbpaste > ~/.clip7' } ]
 
-      - description: '7 = paste from clip7'
-        type: basic
-        from: { key_code: '7', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: 'cat ~/.clip7 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
+      # - description: '7 = paste from clip7'
+      #   type: basic
+      #   from: { key_code: '7', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { shell_command: 'cat ~/.clip7 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
 
-      - description: 'command + 8 = copy to clip8'
-        type: basic
-        from: { key_code: '8', modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: c, modifiers: [ left_command ] } , { shell_command: 'pbpaste > ~/.clip8' } ]
+      # - description: 'command + 8 = copy to clip8'
+      #   type: basic
+      #   from: { key_code: '8', modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { key_code: c, modifiers: [ left_command ] } , { shell_command: 'pbpaste > ~/.clip8' } ]
 
-      - description: '8 = paste from clip8'
-        type: basic
-        from: { key_code: '8', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: 'cat ~/.clip8 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
+      # - description: '8 = paste from clip8'
+      #   type: basic
+      #   from: { key_code: '8', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { shell_command: 'cat ~/.clip8 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
 
-      - description: 'command + 9 = copy to clip9'
-        type: basic
-        from: { key_code: '9', modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: c, modifiers: [ left_command ] } , { shell_command: 'pbpaste > ~/.clip9' } ]
+      # - description: 'command + 9 = copy to clip9'
+      #   type: basic
+      #   from: { key_code: '9', modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { key_code: c, modifiers: [ left_command ] } , { shell_command: 'pbpaste > ~/.clip9' } ]
 
-      - description: '9 = paste from clip9'
-        type: basic
-        from: { key_code: '9', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: 'cat ~/.clip9 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
+      # - description: '9 = paste from clip9'
+      #   type: basic
+      #   from: { key_code: '9', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { shell_command: 'cat ~/.clip9 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
 
-      - description: 'command + 0 = copy to clip0'
-        type: basic
-        from: { key_code: '0', modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: c, modifiers: [ left_command ] } , { shell_command: 'pbpaste > ~/.clip0' } ]
+      # - description: 'command + 0 = copy to clip0'
+      #   type: basic
+      #   from: { key_code: '0', modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { key_code: c, modifiers: [ left_command ] } , { shell_command: 'pbpaste > ~/.clip0' } ]
 
-      - description: '0 = paste from clip0'
-        type: basic
-        from: { key_code: '0', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: 'cat ~/.clip0 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
+      # - description: '0 = paste from clip0'
+      #   type: basic
+      #   from: { key_code: '0', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { shell_command: 'cat ~/.clip0 | pbcopy' },{ key_code: "vk_none", hold_down_milliseconds: 100 },{ key_code: v, modifiers: [ left_command ] } ]
 
 
 
@@ -1558,45 +1553,35 @@ rules:
       #   from: { key_code: '5', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
       #   to: [ { key_code: '5' , modifiers: [ left_shift ] } ]
 
-      # - description: '6 = ^'
-      #   type: basic
-      #   from: { key_code: '6', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-      #   to: [ { key_code: '6' , modifiers: [ left_shift ] } ]
-
-      # - description: '7 = &'
-      #   type: basic
-      #   from: { key_code: '7', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-      #   to: [ { key_code: '7' , modifiers: [ left_shift ] } ]
-
-      # - description: '8 = *'
-      #   type: basic
-      #   from: { key_code: '8', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-      #   to: [ { key_code: '8' , modifiers: [ left_shift ] } ]
-
-      # - description: '9 = ('
-      #   type: basic
-      #   from: { key_code: '9', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-      #   to: [ { key_code: '9' , modifiers: [ left_shift ] } ]
-
-      # - description: '0 = )'
-      #   type: basic
-      #   from: { key_code: '0', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-      #   to: [ { key_code: '0' , modifiers: [ left_shift ] } ]
-
-      - description: 'command + hyphen = scale down'
+      - description: '6 = ^'
         type: basic
-        from: { key_code: hyphen, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: hyphen , modifiers: [ left_command ] } ]
+        from: { key_code: '6', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: '6' , modifiers: [ left_shift ] } ]
+
+      - description: '7 = &'
+        type: basic
+        from: { key_code: '7', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: '7' , modifiers: [ left_shift ] } ]
+
+      - description: '8 = *'
+        type: basic
+        from: { key_code: '8', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: '8' , modifiers: [ left_shift ] } ]
+
+      - description: '9 = ('
+        type: basic
+        from: { key_code: '9', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: '9' , modifiers: [ left_shift ] } ]
+
+      - description: '0 = )'
+        type: basic
+        from: { key_code: '0', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: '0' , modifiers: [ left_shift ] } ]
 
       - description: 'hyphen = _'
         type: basic
         from: { key_code: hyphen, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: hyphen , modifiers: [ left_shift ] } ]
-
-      - description: 'command + equal_sign = scale up'
-        type: basic
-        from: { key_code: equal_sign, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: equal_sign , modifiers: [ left_command ] } ]
         
       - description: 'equal_sign = +'
         type: basic
@@ -1828,16 +1813,10 @@ rules:
         from: { key_code: e, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: open -a 'Google Chrome' } ]
 
-  ################################################################
-  #                       Hyper Sensible                         #
-  ################################################################
-  - description: Hyper Sensible
-    manipulators:
-      - description: 'command + e = shift + command + e'
+      - description: 'command + e = shift + command + e passthrough'
         type: basic
         from: { key_code: e, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: e , modifiers: [ left_command,left_shift ] } ]
-
 
   ################################################################
   #                       Hyper Productivity                     #
@@ -1897,6 +1876,14 @@ rules:
         from: { key_code: grave_accent_and_tilde, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: j , modifiers: [ left_command,left_option ] } ]
 
+      #==========================================================#
+      # ( r ) -->  Vim Prefix Meta Key                           #
+      #==========================================================#
+      - description: 'r = Ctrl + R - Redo'
+        type: basic  
+        from: { key_code: r, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: r , modifiers: [ left_control ] } ]
+
   ################################################################
   #                       Hyper Knob                             #
   ################################################################
@@ -1906,15 +1893,15 @@ rules:
       ################################################################
       #                       Browser Control                        #
       ################################################################
-      - description: 'knob increment = Next Tab'
-        type: basic
-        from: { consumer_key_code: volume_increment, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: close_bracket , modifiers: [ left_command, left_shift ] } ]
+      # - description: 'knob increment = Next Tab'
+      #   type: basic
+      #   from: { consumer_key_code: volume_increment, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { key_code: close_bracket , modifiers: [ left_command, left_shift ] } ]
 
-      - description: 'knob decrement = Previous Tab'
-        type: basic
-        from: { consumer_key_code: volume_decrement, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: open_bracket , modifiers: [ left_command, left_shift ] } ]
+      # - description: 'knob decrement = Previous Tab'
+      #   type: basic
+      #   from: { consumer_key_code: volume_decrement, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { key_code: open_bracket , modifiers: [ left_command, left_shift ] } ]
 
 
       ################################################################
@@ -1943,21 +1930,6 @@ rules:
         type: basic
         from: { consumer_key_code: volume_decrement, modifiers: { mandatory: [ left_option,right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: up_arrow , modifiers: [ left_option ] } ]
-
-
-      ################################################################
-      #   Knob + Shift is open   Better Browser Control              #
-      ################################################################
-      # - description: 'shift + knob increment = Cycle Editor Tabs Forward'
-      #   type: basic
-      #   from: { consumer_key_code: volume_increment, modifiers: { mandatory: [ left_shift,right_command,right_control,right_shift,right_option ] } }
-      #   to: [ { key_code: close_bracket , modifiers: [ left_command, left_shift ] } ]
-
-      # - description: 'shift + knob decrement = Cycle Editor Tabs Reverse'
-      #   type: basic
-      #   from: { consumer_key_code: volume_decrement, modifiers: { mandatory: [ left_shift,right_command,right_control,right_shift,right_option ] } }
-      #   to: [ { key_code: open_bracket , modifiers: [ left_command, left_shift ] } ]
-
 
       ################################################################
       #                       Knob Press                             #
@@ -2051,69 +2023,35 @@ rules:
         type: basic
         from: { key_code: delete_forward, modifiers: { mandatory: [ left_control,left_shift,right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: keypad_1 , modifiers: [ left_control,left_shift ] } ]
-
+        
       #==========================================================#
-      # F1 - F12 --> Hyper Function Keys                         #
+      # 6 - 0 Hyper Number Row                                   #
       #==========================================================#
-      - description: 'F1 = Hyper + F1'
+      - description: 'command + 6 = hyper + 6'
         type: basic
-        from: { key_code: f1, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: f1, modifiers: [left_command,left_control,left_shift,left_option] } ]
+        from: { key_code: '6', modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: '6', modifiers: [ left_command,left_control,left_shift,left_option ] } ]
 
-      - description: 'F2 = Hyper + F2'
+      - description: 'command + 7 = hyper + 7'
         type: basic
-        from: { key_code: f2, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: f2, modifiers: [left_command,left_control,left_shift,left_option] } ]
+        from: { key_code: '7', modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: '7', modifiers: [ left_command,left_control,left_shift,left_option ] } ]
 
-      - description: 'F3 = Hyper + F3'
+      - description: 'command + 8 = hyper + 8'
         type: basic
-        from: { key_code: f3, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: f3, modifiers: [left_command,left_control,left_shift,left_option] } ]
+        from: { key_code: '8', modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: '8', modifiers: [ left_command,left_control,left_shift,left_option ] } ]
 
-      - description: 'F4 = Alfred 5'
+      - description: 'command + 9 = hyper + 9'
         type: basic
-        from: { key_code: f4, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: f4, modifiers: [left_command,left_control,left_shift,left_option] } ]
+        from: { key_code: '9', modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: '9', modifiers: [ left_command,left_control,left_shift,left_option ] } ]
 
-      - description: 'F5 = Hyper + F5'
+      - description: 'command + 0 = hyper + 0'
         type: basic
-        from: { key_code: f5, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: f5, modifiers: [left_command,left_control,left_shift,left_option] } ]
-
-      - description: 'F6 = Hyper + F6'
-        type: basic
-        from: { key_code: f6, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: f6, modifiers: [left_command,left_control,left_shift,left_option] } ]
-
-      - description: 'F7 = Hyper + F7'
-        type: basic
-        from: { key_code: f7, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: f7, modifiers: [left_command,left_control,left_shift,left_option] } ]
-
-      - description: 'F8 = Hyper + F8'
-        type: basic
-        from: { key_code: f8, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: f8, modifiers: [left_command,left_control,left_shift,left_option] } ]
-
-      - description: 'F9 = Hyper + F9'
-        type: basic
-        from: { key_code: f9, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: f9, modifiers: [left_command,left_control,left_shift,left_option] } ]
-
-      - description: 'F10 = Hyper + F10'
-        type: basic
-        from: { key_code: f10, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: f10, modifiers: [left_command,left_control,left_shift,left_option] } ]
-
-      - description: 'F11 = Hyper + F11'
-        type: basic
-        from: { key_code: f11, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: f11, modifiers: [left_command,left_control,left_shift,left_option] } ]
-
-      - description: 'F12 = Hyper + F12'
-        type: basic
-        from: { key_code: f12, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: f12, modifiers: [left_command,left_control,left_shift,left_option] } ]
+        from: { key_code: '0', modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: '0', modifiers: [ left_command,left_control,left_shift,left_option ] } ]
+        
 
 
   ################################################################
