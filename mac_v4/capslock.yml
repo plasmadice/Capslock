@@ -1824,6 +1824,22 @@ rules:
   - description: Hyper Productivity
     manipulators:
 
+      # Hyper backspace
+      # delete char and word
+      - description: 'backspace = delete a word ahead'
+        type: basic
+        from: { key_code: delete_or_backspace, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: delete_or_backspace, modifiers: [ left_option ] } ]
+
+      - description: 'option + backspace = delete a word after'
+        type: basic
+        from: { key_code: delete_or_backspace, modifiers: { mandatory: [ left_option, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: delete_forward, modifiers: [ left_option ] } ]
+
+      - description: 'command + backspace = delete whole line'
+        type: basic
+        from: { key_code: delete_or_backspace, modifiers: { mandatory: [ left_command,  right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: right_arrow, modifiers: [ left_shift,left_command ] } , { key_code: delete_or_backspace } ]
 
       ################################################################
       #                       Browser Additions                      #
