@@ -1312,17 +1312,6 @@ rules:
         from: { key_code: f, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: open -g -a 'Alfred 5' } ]
 
-      #==========================================================#
-      # ( g ) --> idea / calender                       #
-      #==========================================================#
-      - description: 'option + g = Calender'
-        type: basic
-        from: { key_code: g, modifiers: { mandatory: [ left_option, right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a Calendar } ]
-
-
-
-
   ################################################################
   #                       Hyper Terminal                         #
   ################################################################
