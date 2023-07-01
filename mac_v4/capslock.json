@@ -4919,27 +4919,6 @@
           ]
         },
         {
-          "description": "command + f = Dash",
-          "type": "basic",
-          "from": {
-            "key_code": "f",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "open -a Dash"
-            }
-          ]
-        },
-        {
           "description": "option + f = Dictionary",
           "type": "basic",
           "from": {
@@ -4961,12 +4940,13 @@
           ]
         },
         {
-          "description": "f = Alfred 5",
+          "description": "command + f = Alfred 5",
           "type": "basic",
           "from": {
             "key_code": "f",
             "modifiers": {
               "mandatory": [
+                "left_command",
                 "right_command",
                 "right_control",
                 "right_shift",
@@ -6543,6 +6523,29 @@
           "to": [
             {
               "key_code": "r",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "f = CTRL + F - Scroll Up",
+          "type": "basic",
+          "from": {
+            "key_code": "f",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "u",
               "modifiers": [
                 "left_control"
               ]

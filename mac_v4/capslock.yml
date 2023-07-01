@@ -1300,21 +1300,16 @@ rules:
         to: [ { shell_command: open -a Siri } ]
 
       #==========================================================#
-      # ( f ) --> alfred 5 / Dash / Dictionary                   #
+      # ( f ) --> alfred 5 / Dictionary                   #
       #==========================================================#
-      - description: 'command + f = Dash'
-        type: basic
-        from: { key_code: f, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a Dash } ]
-
       - description: 'option + f = Dictionary'
         type: basic
         from: { key_code: f, modifiers: { mandatory: [ left_option, right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: open -a Dictionary } ]
 
-      - description: 'f = Alfred 5'
+      - description: 'command + f = Alfred 5'
         type: basic
-        from: { key_code: f, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        from: { key_code: f, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: open -g -a 'Alfred 5' } ]
 
       #==========================================================#
@@ -1899,7 +1894,11 @@ rules:
         type: basic  
         from: { key_code: r, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: r , modifiers: [ left_control ] } ]
-
+      
+      - description: 'f = CTRL + F - Scroll Up'
+        type: basic
+        from: { key_code: f, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: u , modifiers: [ left_control ] } ]
   ################################################################
   #                       Hyper Knob                             #
   ################################################################
