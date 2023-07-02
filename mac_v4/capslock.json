@@ -7271,6 +7271,107 @@
           ]
         }
       ]
+    },
+    {
+      "description": "Slow Mouse Motions",
+      "manipulators": [
+        {
+          "description": "control + option + h = mouse move right",
+          "type": "basic",
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "left_option",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "x": -800
+              }
+            }
+          ]
+        },
+        {
+          "description": "control + option + j = mouse move right",
+          "type": "basic",
+          "from": {
+            "key_code": "j",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "left_option",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "y": 800
+              }
+            }
+          ]
+        },
+        {
+          "description": "control + option + k = mouse move right",
+          "type": "basic",
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "left_option",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "y": -800
+              }
+            }
+          ]
+        },
+        {
+          "description": "control + option + l = mouse move right",
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "left_option",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "x": 800
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }
