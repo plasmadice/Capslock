@@ -1326,10 +1326,6 @@ rules:
         from: { key_code: d, modifiers: { mandatory: [ left_command,  right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: d, modifiers: [ left_control, left_command ] } ]
 
-      - description: 'd = ctrl-d (EOF)'
-        type: basic
-        from: { key_code: d, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: d , modifiers: [ left_control ] } ]
 
       #==========================================================#
       # ( z ) -->  Ctrl-Z (SIGTSTP)  |  F5 (VS Code Debug)       #
@@ -1883,11 +1879,24 @@ rules:
         type: basic  
         from: { key_code: r, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: r , modifiers: [ left_control ] } ]
-      
-      - description: 'f = CTRL + F - Scroll Up'
+
+
+      #==========================================================#
+      # Purposefully reversed for convenience in Vim             #
+      #==========================================================# 
+      # - description: 'f = CTRL + F - Scroll Up'
+      - description: 'd = CTRL + F - Scroll Up'
+        type: basic
+        from: { key_code: d, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: u , modifiers: [ left_control ] } ]
+
+      # - description: 'd = ctrl-d - Scroll Down'
+      - description: 'f = ctrl-d - Scroll Down'
         type: basic
         from: { key_code: f, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: u , modifiers: [ left_control ] } ]
+        to: [ { key_code: d , modifiers: [ left_control ] } ]
+
+
   ################################################################
   #                       Hyper Knob                             #
   ################################################################
