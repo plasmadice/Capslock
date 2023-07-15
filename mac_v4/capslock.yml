@@ -325,14 +325,6 @@ rules:
         from: { key_code: u, modifiers: { mandatory: [ left_shift,left_command,  right_command,right_control,right_shift,right_option ] } }
         to: [ { mouse_key: { horizontal_wheel: -128 } } ]
 
-      # normal: cursor move
-      - description: ' u = page_up'
-        type: basic
-        from: { key_code: u, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: page_up } ]
-
-
-
       #==========================================================#
       # ( i ) + ( ⌘⌥⇧⌃ )  -> ( PageUp )                          #
       #==========================================================#
@@ -1303,9 +1295,9 @@ rules:
         from: { key_code: f, modifiers: { mandatory: [ left_option, right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: open -a Dictionary } ]
 
-      - description: 'command + f = Alfred 5'
+      - description: 'f = Alfred 5'
         type: basic
-        from: { key_code: f, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+        from: { key_code: f, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: open -g -a 'Alfred 5' } ]
 
   ################################################################
@@ -1885,19 +1877,17 @@ rules:
 
 
       #==========================================================#
-      # Purposefully reversed for convenience in Vim             #
+      # Vim movement keys #
       #==========================================================# 
-      # - description: 'f = CTRL + F - Scroll Up'
-      - description: 'd = CTRL + F - Scroll Up'
+      - description: 'd = CTRL + d - Scroll Down'
         type: basic
         from: { key_code: d, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: u , modifiers: [ left_control ] } ]
-
-      # - description: 'd = ctrl-d - Scroll Down'
-      - description: 'f = ctrl-d - Scroll Down'
-        type: basic
-        from: { key_code: f, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: d , modifiers: [ left_control ] } ]
+
+      - description: 'u = ctrl-u - Scroll Up'
+        type: basic
+        from: { key_code: u, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: u , modifiers: [ left_control ] } ]
 
 
   ################################################################

@@ -1162,26 +1162,6 @@
           ]
         },
         {
-          "description": " u = page_up",
-          "type": "basic",
-          "from": {
-            "key_code": "u",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "page_up"
-            }
-          ]
-        },
-        {
           "description": "command + i = shift + home",
           "type": "basic",
           "from": {
@@ -4944,13 +4924,12 @@
           ]
         },
         {
-          "description": "command + f = Alfred 5",
+          "description": "f = Alfred 5",
           "type": "basic",
           "from": {
             "key_code": "f",
             "modifiers": {
               "mandatory": [
-                "left_command",
                 "right_command",
                 "right_control",
                 "right_shift",
@@ -6507,7 +6486,7 @@
           ]
         },
         {
-          "description": "d = CTRL + F - Scroll Up",
+          "description": "d = CTRL + d - Scroll Down",
           "type": "basic",
           "from": {
             "key_code": "d",
@@ -6522,7 +6501,7 @@
           },
           "to": [
             {
-              "key_code": "u",
+              "key_code": "d",
               "modifiers": [
                 "left_control"
               ]
@@ -6530,10 +6509,10 @@
           ]
         },
         {
-          "description": "f = ctrl-d - Scroll Down",
+          "description": "u = ctrl-u - Scroll Up",
           "type": "basic",
           "from": {
-            "key_code": "f",
+            "key_code": "u",
             "modifiers": {
               "mandatory": [
                 "right_command",
@@ -6545,7 +6524,7 @@
           },
           "to": [
             {
-              "key_code": "d",
+              "key_code": "u",
               "modifiers": [
                 "left_control"
               ]
