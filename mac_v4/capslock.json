@@ -95,6 +95,198 @@
       "description": "Hyper Navigation",
       "manipulators": [
         {
+          "description": "g = option + left (word-length left)",
+          "type": "basic",
+          "from": {
+            "key_code": "g",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "command + g = option + shift + left (word-length selection left)",
+          "type": "basic",
+          "from": {
+            "key_code": "g",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "left_option",
+                "left_shift"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "quote = option + right (word-length right)",
+          "type": "basic",
+          "from": {
+            "key_code": "quote",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "command + quote = option + shift + right (word-length selection right)",
+          "type": "basic",
+          "from": {
+            "key_code": "quote",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "left_option",
+                "left_shift"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "control + option + h = mouse move right",
+          "type": "basic",
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "left_option",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "x": -800
+              }
+            }
+          ]
+        },
+        {
+          "description": "control + option + j = mouse move right",
+          "type": "basic",
+          "from": {
+            "key_code": "j",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "left_option",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "y": 800
+              }
+            }
+          ]
+        },
+        {
+          "description": "control + option + k = mouse move right",
+          "type": "basic",
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "left_option",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "y": -800
+              }
+            }
+          ]
+        },
+        {
+          "description": "control + option + l = mouse move right",
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "left_option",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "x": 800
+              }
+            }
+          ]
+        },
+        {
           "description": "command + h = shift + left",
           "type": "basic",
           "from": {
@@ -4758,6 +4950,68 @@
       "description": "Hyper Application",
       "manipulators": [
         {
+          "description": "e = Chrome",
+          "type": "basic",
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Google Chrome'"
+            }
+          ]
+        },
+        {
+          "description": "e + command = Obsidian",
+          "type": "basic",
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Obsidian'"
+            }
+          ]
+        },
+        {
+          "description": "e + option = Discord",
+          "type": "basic",
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": [
+                "left_option",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Discord'"
+            }
+          ]
+        },
+        {
           "description": "command + r = preview",
           "type": "basic",
           "from": {
@@ -4948,6 +5202,149 @@
     {
       "description": "Hyper Terminal",
       "manipulators": [
+        {
+          "description": "command + ~ = split terminal (mapped VSCode)",
+          "type": "basic",
+          "from": {
+            "key_code": "grave_accent_and_tilde",
+            "modifiers": {
+              "mandatory": [
+                "left_option",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "5",
+              "modifiers": [
+                "left_control",
+                "left_shift"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "command + ~ = unsplit terminal (unmapped VSCode)",
+          "type": "basic",
+          "from": {
+            "key_code": "grave_accent_and_tilde",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "4",
+              "modifiers": [
+                "left_control",
+                "left_shift"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "~ = open Chrome developer console",
+          "type": "basic",
+          "from": {
+            "key_code": "grave_accent_and_tilde",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "j",
+              "modifiers": [
+                "left_command",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "r = Ctrl + R - Redo",
+          "type": "basic",
+          "from": {
+            "key_code": "r",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "r",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "d = CTRL + d - Scroll Down",
+          "type": "basic",
+          "from": {
+            "key_code": "d",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "d",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "u = ctrl-u - Scroll Up",
+          "type": "basic",
+          "from": {
+            "key_code": "u",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "u",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ]
+        },
         {
           "description": "command + d = define",
           "type": "basic",
@@ -5662,7 +6059,7 @@
           ]
         },
         {
-          "description": "open_bracket [ = (",
+          "description": "open_bracket [ = {",
           "type": "basic",
           "from": {
             "key_code": "open_bracket",
@@ -5677,7 +6074,7 @@
           },
           "to": [
             {
-              "key_code": "9",
+              "key_code": "open_bracket",
               "modifiers": [
                 "left_shift"
               ]
@@ -5733,7 +6130,7 @@
           ]
         },
         {
-          "description": "close_bracket ] = )",
+          "description": "close_bracket ] = }",
           "type": "basic",
           "from": {
             "key_code": "close_bracket",
@@ -5748,7 +6145,7 @@
           },
           "to": [
             {
-              "key_code": "0",
+              "key_code": "close_bracket",
               "modifiers": [
                 "left_shift"
               ]
@@ -5756,7 +6153,7 @@
           ]
         },
         {
-          "description": "backslash \\ = command + / (comment)",
+          "description": "backslash \\ = backslash + shift = |",
           "type": "basic",
           "from": {
             "key_code": "backslash",
@@ -5771,9 +6168,9 @@
           },
           "to": [
             {
-              "key_code": "slash",
+              "key_code": "backslash",
               "modifiers": [
-                "left_command"
+                "left_shift"
               ]
             }
           ]
@@ -6167,73 +6564,6 @@
       ]
     },
     {
-      "description": "Hyper Application+",
-      "manipulators": [
-        {
-          "description": "e = Chrome",
-          "type": "basic",
-          "from": {
-            "key_code": "e",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "open -a 'Google Chrome'"
-            }
-          ]
-        },
-        {
-          "description": "e + command = Obsidian",
-          "type": "basic",
-          "from": {
-            "key_code": "e",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "open -a 'Obsidian'"
-            }
-          ]
-        },
-        {
-          "description": "e + option = Discord",
-          "type": "basic",
-          "from": {
-            "key_code": "e",
-            "modifiers": {
-              "mandatory": [
-                "left_option",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "open -a 'Discord'"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "description": "Hyper Productivity",
       "manipulators": [
         {
@@ -6377,154 +6707,6 @@
           "to": [
             {
               "key_code": "escape",
-              "modifiers": [
-                "left_control"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "Hyper Terminal+",
-      "manipulators": [
-        {
-          "description": "command + ~ = split terminal (mapped VSCode)",
-          "type": "basic",
-          "from": {
-            "key_code": "grave_accent_and_tilde",
-            "modifiers": {
-              "mandatory": [
-                "left_option",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "5",
-              "modifiers": [
-                "left_control",
-                "left_shift"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "command + ~ = unsplit terminal (unmapped VSCode)",
-          "type": "basic",
-          "from": {
-            "key_code": "grave_accent_and_tilde",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "4",
-              "modifiers": [
-                "left_control",
-                "left_shift"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "~ = open Chrome developer console",
-          "type": "basic",
-          "from": {
-            "key_code": "grave_accent_and_tilde",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "j",
-              "modifiers": [
-                "left_command",
-                "left_option"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "r = Ctrl + R - Redo",
-          "type": "basic",
-          "from": {
-            "key_code": "r",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "r",
-              "modifiers": [
-                "left_control"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "d = CTRL + d - Scroll Down",
-          "type": "basic",
-          "from": {
-            "key_code": "d",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "d",
-              "modifiers": [
-                "left_control"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "u = ctrl-u - Scroll Up",
-          "type": "basic",
-          "from": {
-            "key_code": "u",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "u",
               "modifiers": [
                 "left_control"
               ]
@@ -6723,67 +6905,6 @@
               "key_code": "w",
               "modifiers": [
                 "left_command"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "Hyper Knob+",
-      "manipulators": [
-        {
-          "description": "control + shift + knob increment = Custom HotKey (Double Hyper 9)",
-          "type": "basic",
-          "from": {
-            "consumer_key_code": "volume_increment",
-            "modifiers": {
-              "mandatory": [
-                "left_control",
-                "left_shift",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "keypad_9",
-              "modifiers": [
-                "left_command",
-                "left_control",
-                "left_shift",
-                "left_option"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "control + shift + knob decrement = Custom HotKey (Double Hyper 8)",
-          "type": "basic",
-          "from": {
-            "consumer_key_code": "volume_decrement",
-            "modifiers": {
-              "mandatory": [
-                "left_control",
-                "left_shift",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "keypad_8",
-              "modifiers": [
-                "left_command",
-                "left_control",
-                "left_shift",
-                "left_option"
               ]
             }
           ]
@@ -7132,208 +7253,6 @@
                 "left_shift",
                 "left_option"
               ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "Hyper Navigation+",
-      "manipulators": [
-        {
-          "description": "g = option + left (word-length left)",
-          "type": "basic",
-          "from": {
-            "key_code": "g",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "left_arrow",
-              "modifiers": [
-                "left_option"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "command + g = option + shift + left (word-length selection left)",
-          "type": "basic",
-          "from": {
-            "key_code": "g",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "left_arrow",
-              "modifiers": [
-                "left_option",
-                "left_shift"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "quote = option + right (word-length right)",
-          "type": "basic",
-          "from": {
-            "key_code": "quote",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "right_arrow",
-              "modifiers": [
-                "left_option"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "command + quote = option + shift + right (word-length selection right)",
-          "type": "basic",
-          "from": {
-            "key_code": "quote",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "right_arrow",
-              "modifiers": [
-                "left_option",
-                "left_shift"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "Slow Mouse Motions",
-      "manipulators": [
-        {
-          "description": "control + option + h = mouse move right",
-          "type": "basic",
-          "from": {
-            "key_code": "h",
-            "modifiers": {
-              "mandatory": [
-                "left_control",
-                "left_option",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "mouse_key": {
-                "x": -800
-              }
-            }
-          ]
-        },
-        {
-          "description": "control + option + j = mouse move right",
-          "type": "basic",
-          "from": {
-            "key_code": "j",
-            "modifiers": {
-              "mandatory": [
-                "left_control",
-                "left_option",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "mouse_key": {
-                "y": 800
-              }
-            }
-          ]
-        },
-        {
-          "description": "control + option + k = mouse move right",
-          "type": "basic",
-          "from": {
-            "key_code": "k",
-            "modifiers": {
-              "mandatory": [
-                "left_control",
-                "left_option",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "mouse_key": {
-                "y": -800
-              }
-            }
-          ]
-        },
-        {
-          "description": "control + option + l = mouse move right",
-          "type": "basic",
-          "from": {
-            "key_code": "l",
-            "modifiers": {
-              "mandatory": [
-                "left_control",
-                "left_option",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "mouse_key": {
-                "x": 800
-              }
             }
           ]
         }

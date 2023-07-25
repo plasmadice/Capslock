@@ -41,6 +41,53 @@ rules:
   - description: Hyper Navigation
     manipulators:
 
+    # normal: cursor move word length left
+      - description: 'g = option + left (word-length left)'
+        type: basic
+        from: { key_code: g, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: left_arrow , modifiers: [ left_option ] } ]
+
+      # command: word selection left
+      - description: 'command + g = option + shift + left (word-length selection left)'
+        type: basic
+        from: { key_code: g, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: left_arrow , modifiers: [ left_option, left_shift ] } ]
+
+      # normal: cursor move word length right
+      - description: 'quote = option + right (word-length right)'
+        type: basic
+        from: { key_code: quote, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: right_arrow , modifiers: [ left_option ] } ]
+
+      # command: word selection left
+      - description: 'command + quote = option + shift + right (word-length selection right)'
+        type: basic
+        from: { key_code: quote, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: right_arrow , modifiers: [ left_option, left_shift ] } ]
+
+     #             Slow Mouse Motions               #
+     # control + option: slow mouse move
+      - description: 'control + option + h = mouse move right'
+        type: basic
+        from: { key_code: h, modifiers: { mandatory: [ left_control,left_option, right_command,right_control,right_shift,right_option ] } }
+        to: [ { mouse_key: { x: -800 } } ]
+
+      - description: 'control + option + j = mouse move right'
+        type: basic
+        from: { key_code: j, modifiers: { mandatory: [ left_control,left_option, right_command,right_control,right_shift,right_option ] } }
+        to: [ { mouse_key: { y: 800 } } ]
+
+      - description: 'control + option + k = mouse move right'
+        type: basic
+        from: { key_code: k, modifiers: { mandatory: [ left_control,left_option, right_command,right_control,right_shift,right_option ] } }
+        to: [ { mouse_key: { y: -800 } } ]
+
+      - description: 'control + option + l = mouse move right'
+        type: basic
+        from: { key_code: l, modifiers: { mandatory: [ left_control,left_option, right_command,right_control,right_shift,right_option ] } }
+        to: [ { mouse_key: { x: 800 } } ]
+
+
       #==========================================================#
       # ( h ) + ( ⌘⌥⇧⌃ )  -> ( left )                            #
       #==========================================================#
@@ -1243,6 +1290,22 @@ rules:
     manipulators:
 
 
+      # Customs #
+      - description: 'e = Chrome'
+        type: basic
+        from: { key_code: e, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { shell_command: open -a 'Google Chrome' } ]
+
+      - description: 'e + command = Obsidian'
+        type: basic
+        from: { key_code: e, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+        to: [ { shell_command: open -a 'Obsidian' } ]
+
+      - description: 'e + option = Discord'
+        type: basic
+        from: { key_code: e, modifiers: { mandatory: [ left_option, right_command,right_control,right_shift,right_option ] } }
+        to: [ { shell_command: open -a 'Discord' } ]
+
       #==========================================================#
       # ( r ) --> iterm / preview / terminal                     #
       #==========================================================#
@@ -1305,6 +1368,50 @@ rules:
   ################################################################
   - description: Hyper Terminal
     manipulators:
+
+      ################################################################
+      #                      VSCode Terminal                         #
+      ################################################################
+      - description: 'command + ~ = split terminal (mapped VSCode)'
+        type: basic
+        from: { key_code: grave_accent_and_tilde, modifiers: { mandatory: [ left_option,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: '5' , modifiers: [ left_control,left_shift ] } ]
+
+      - description: 'command + ~ = unsplit terminal (unmapped VSCode)'
+        type: basic
+        from: { key_code: grave_accent_and_tilde, modifiers: { mandatory: [ left_command,right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: '4' , modifiers: [ left_control,left_shift ] } ]
+
+      ################################################################
+      #                       General Terminal                       #
+      ################################################################
+      
+      - description: '~ = open Chrome developer console'
+        type: basic
+        from: { key_code: grave_accent_and_tilde, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: j , modifiers: [ left_command,left_option ] } ]
+
+      #==========================================================#
+      # ( r ) -->  Vim Prefix Meta Key                           #
+      #==========================================================#
+      - description: 'r = Ctrl + R - Redo'
+        type: basic  
+        from: { key_code: r, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: r , modifiers: [ left_control ] } ]
+
+
+      #==========================================================#
+      # Vim movement keys #
+      #==========================================================# 
+      - description: 'd = CTRL + d - Scroll Down'
+        type: basic
+        from: { key_code: d, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: d , modifiers: [ left_control ] } ]
+
+      - description: 'u = ctrl-u - Scroll Up'
+        type: basic
+        from: { key_code: u, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: u , modifiers: [ left_control ] } ]
 
       #==========================================================#
       # ( d ) -->  Ctrl-D (EOF)   |  Define                      #
@@ -1570,10 +1677,10 @@ rules:
         from: { key_code: open_bracket, modifiers: { mandatory: [ left_option, right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: comma , modifiers: [ left_shift ] } ]
 
-      - description: 'open_bracket [ = ('
+      - description: 'open_bracket [ = {'
         type: basic
         from: { key_code: open_bracket, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: '9' , modifiers: [ left_shift ] } ]
+        to: [ { key_code: 'open_bracket' , modifiers: [ left_shift ] } ]
 
       - description: 'command + close_bracket ] = }'
         type: basic
@@ -1585,19 +1692,19 @@ rules:
         from: { key_code: close_bracket, modifiers: { mandatory: [ left_option,  right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: period , modifiers: [ left_shift ] } ]
 
-      - description: 'close_bracket ] = )'
+      - description: 'close_bracket ] = }'
         type: basic
         from: { key_code: close_bracket, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: '0' , modifiers: [ left_shift ] } ]
+        to: [ { key_code: 'close_bracket' , modifiers: [ left_shift ] } ]
 
 
       #==========================================================#
       # slash/backslash to comment
       #==========================================================#
-      - description: 'backslash \ = command + / (comment)'
+      - description: 'backslash \ = backslash + shift = |'
         type: basic
         from: { key_code: backslash, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: slash , modifiers: [ left_command ] } ]
+        to: [ { key_code: backslash , modifiers: [ left_shift ] } ]
 
       - description: 'slash / = command + / (comment)'
         type: basic
@@ -1770,28 +1877,6 @@ rules:
         from: { key_code: page_down, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: volume_decrement, modifiers: [ left_shift, left_option ] } ]
 
-  ################################################################
-  #                       Hyper Application+                     #
-  ################################################################
-  - description: Hyper Application+
-    manipulators:
-
-      - description: 'e = Chrome'
-        type: basic
-        from: { key_code: e, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a 'Google Chrome' } ]
-
-      - description: 'e + command = Obsidian'
-        type: basic
-        from: { key_code: e, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a 'Obsidian' } ]
-
-      - description: 'e + option = Discord'
-        type: basic
-        from: { key_code: e, modifiers: { mandatory: [ left_option, right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a 'Discord' } ]
-
-
 
   ################################################################
   #                       Hyper Productivity                     #
@@ -1836,58 +1921,6 @@ rules:
         type: basic
         from: { key_code: a, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: escape , modifiers: [ left_control ] } ]
-
-
-  ################################################################
-  #                       Hyper Terminal+                        #
-  ################################################################
-  - description: Hyper Terminal+
-    manipulators:
-
-
-      ################################################################
-      #                      VSCode Terminal                         #
-      ################################################################
-      - description: 'command + ~ = split terminal (mapped VSCode)'
-        type: basic
-        from: { key_code: grave_accent_and_tilde, modifiers: { mandatory: [ left_option,right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: '5' , modifiers: [ left_control,left_shift ] } ]
-
-      - description: 'command + ~ = unsplit terminal (unmapped VSCode)'
-        type: basic
-        from: { key_code: grave_accent_and_tilde, modifiers: { mandatory: [ left_command,right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: '4' , modifiers: [ left_control,left_shift ] } ]
-
-      ################################################################
-      #                       General Terminal                       #
-      ################################################################
-      
-      - description: '~ = open Chrome developer console'
-        type: basic
-        from: { key_code: grave_accent_and_tilde, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: j , modifiers: [ left_command,left_option ] } ]
-
-      #==========================================================#
-      # ( r ) -->  Vim Prefix Meta Key                           #
-      #==========================================================#
-      - description: 'r = Ctrl + R - Redo'
-        type: basic  
-        from: { key_code: r, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: r , modifiers: [ left_control ] } ]
-
-
-      #==========================================================#
-      # Vim movement keys #
-      #==========================================================# 
-      - description: 'd = CTRL + d - Scroll Down'
-        type: basic
-        from: { key_code: d, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: d , modifiers: [ left_control ] } ]
-
-      - description: 'u = ctrl-u - Scroll Up'
-        type: basic
-        from: { key_code: u, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: u , modifiers: [ left_control ] } ]
 
 
   ################################################################
@@ -1960,22 +1993,6 @@ rules:
         from: { consumer_key_code: mute, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: w , modifiers: [ left_command ] } ]
 
-
-  ################################################################
-  #                       Hyper Knob+                            #
-  ################################################################
-  - description: Hyper Knob+
-    manipulators:
-
-      - description: 'control + shift + knob increment = Custom HotKey (Double Hyper 9)'
-        type: basic
-        from: { consumer_key_code: volume_increment, modifiers: { mandatory: [ left_control,left_shift,right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: keypad_9 , modifiers: [ left_command,left_control,left_shift,left_option ] } ]
-
-      - description: 'control + shift + knob decrement = Custom HotKey (Double Hyper 8)'
-        type: basic
-        from: { consumer_key_code: volume_decrement, modifiers: { mandatory: [ left_control,left_shift,right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: keypad_8 , modifiers: [ left_command,left_control,left_shift,left_option ] } ]
 
 
   ################################################################
@@ -2057,38 +2074,7 @@ rules:
         type: basic
         from: { key_code: '0', modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: '0', modifiers: [ left_command,left_control,left_shift,left_option ] } ]
-        
-
-
-  ################################################################
-  #                       Hyper Navigation+                       #
-  ################################################################
-  - description: Hyper Navigation+
-    manipulators:
-
-      # normal: cursor move word length left
-      - description: 'g = option + left (word-length left)'
-        type: basic
-        from: { key_code: g, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: left_arrow , modifiers: [ left_option ] } ]
-
-      # command: word selection left
-      - description: 'command + g = option + shift + left (word-length selection left)'
-        type: basic
-        from: { key_code: g, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: left_arrow , modifiers: [ left_option, left_shift ] } ]
-
-      # normal: cursor move word length right
-      - description: 'quote = option + right (word-length right)'
-        type: basic
-        from: { key_code: quote, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: right_arrow , modifiers: [ left_option ] } ]
-
-      # command: word selection left
-      - description: 'command + quote = option + shift + right (word-length selection right)'
-        type: basic
-        from: { key_code: quote, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: right_arrow , modifiers: [ left_option, left_shift ] } ]
+      
 
   ################################################################
   #        Return to Hyper (Disabled - Too powerful)             #
@@ -2101,31 +2087,3 @@ rules:
   #       from: { key_code: return_or_enter ,modifiers: { optional: [ any ] } }
   #       to: [ { key_code: right_shift,modifiers: [ right_command,right_control,right_option ], lazy: true } ]
   #       to_if_alone: [ { key_code: return_or_enter, lazy: true } ]
-
-  ################################################################
-  #                    Slow Mouse Motions                        #
-  ################################################################
-  - description: Slow Mouse Motions 
-    manipulators:
-
-     # control + option: slow mouse move
-      - description: 'control + option + h = mouse move right'
-        type: basic
-        from: { key_code: h, modifiers: { mandatory: [ left_control,left_option, right_command,right_control,right_shift,right_option ] } }
-        to: [ { mouse_key: { x: -800 } } ]
-
-      - description: 'control + option + j = mouse move right'
-        type: basic
-        from: { key_code: j, modifiers: { mandatory: [ left_control,left_option, right_command,right_control,right_shift,right_option ] } }
-        to: [ { mouse_key: { y: 800 } } ]
-
-      - description: 'control + option + k = mouse move right'
-        type: basic
-        from: { key_code: k, modifiers: { mandatory: [ left_control,left_option, right_command,right_control,right_shift,right_option ] } }
-        to: [ { mouse_key: { y: -800 } } ]
-
-      - description: 'control + option + l = mouse move right'
-        type: basic
-        from: { key_code: l, modifiers: { mandatory: [ left_control,left_option, right_command,right_control,right_shift,right_option ] } }
-        to: [ { mouse_key: { x: 800 } } ]
-
