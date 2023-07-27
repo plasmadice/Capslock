@@ -6814,100 +6814,6 @@
               ]
             }
           ]
-        },
-        {
-          "description": "knob press = Close Tab",
-          "type": "basic",
-          "from": {
-            "consumer_key_code": "mute",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "w",
-              "modifiers": [
-                "left_command"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "command + knob press = Re-open Tab",
-          "type": "basic",
-          "from": {
-            "consumer_key_code": "mute",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "t",
-              "modifiers": [
-                "left_command",
-                "left_shift"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "knob press = Close Tab",
-          "type": "basic",
-          "from": {
-            "consumer_key_code": "mute",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "w",
-              "modifiers": [
-                "left_command"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "knob press = Close Tab",
-          "type": "basic",
-          "from": {
-            "consumer_key_code": "mute",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "w",
-              "modifiers": [
-                "left_command"
-              ]
-            }
-          ]
         }
       ]
     },
@@ -7247,6 +7153,219 @@
           "to": [
             {
               "key_code": "0",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Hyper Media Keys",
+      "manipulators": [
+        {
+          "description": "F5 (f5) = Hyper + f5",
+          "type": "basic",
+          "from": {
+            "key_code": "f5",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f5",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F6 (f6) = Hyper + f6",
+          "type": "basic",
+          "from": {
+            "key_code": "f6",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f6",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F7 (scan_previous_track) = Hyper + f7",
+          "type": "basic",
+          "from": {
+            "consumer_key_code": "scan_previous_track",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f7",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F8 (play_or_pause) = Hyper + f8",
+          "type": "basic",
+          "from": {
+            "consumer_key_code": "play_or_pause",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f8",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F9 (play_or_pause) = Hyper + f9",
+          "type": "basic",
+          "from": {
+            "consumer_key_code": "scan_next_track",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f9",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F10 (mute) = Hyper + f10",
+          "type": "basic",
+          "from": {
+            "consumer_key_code": "mute",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f10",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F11 (volume_decrement) = Hyper + f11",
+          "type": "basic",
+          "from": {
+            "consumer_key_code": "volume_decrement",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f11",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F12 (volume_increment) = Hyper + f12",
+          "type": "basic",
+          "from": {
+            "consumer_key_code": "volume_increment",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f12",
               "modifiers": [
                 "left_command",
                 "left_control",

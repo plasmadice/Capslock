@@ -1970,31 +1970,6 @@ rules:
         from: { consumer_key_code: volume_decrement, modifiers: { mandatory: [ left_option,right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: up_arrow , modifiers: [ left_option ] } ]
 
-      ################################################################
-      #                       Knob Press                             #
-      ################################################################
-      - description: 'knob press = Close Tab'
-        type: basic
-        from: { consumer_key_code: mute, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: w , modifiers: [ left_command ] } ]
-
-      - description: 'command + knob press = Re-open Tab'
-        type: basic
-        from: { consumer_key_code: mute, modifiers: { mandatory: [ left_command,right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: t , modifiers: [ left_command, left_shift ] } ]
-
-      - description: 'knob press = Close Tab'
-        type: basic
-        from: { consumer_key_code: mute, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: w , modifiers: [ left_command ] } ]
-
-      - description: 'knob press = Close Tab'
-        type: basic
-        from: { consumer_key_code: mute, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: w , modifiers: [ left_command ] } ]
-
-
-
   ################################################################
   #                       Hyper Free Keys                        #
   ################################################################
@@ -2087,3 +2062,58 @@ rules:
   #       from: { key_code: return_or_enter ,modifiers: { optional: [ any ] } }
   #       to: [ { key_code: right_shift,modifiers: [ right_command,right_control,right_option ], lazy: true } ]
   #       to_if_alone: [ { key_code: return_or_enter, lazy: true } ]
+
+
+  ################################################################
+  #                       Hyper Media Keys                       #
+  ################################################################
+  - description: Hyper Media Keys 
+    manipulators:
+
+      ################################################################
+      #          Change CMD + F5-F12 to Hyper + F5-F12                      #
+      ################################################################
+      # - description: 'Forward Del + Command + Control + Shift + Option = Custom Hotkey (Double Hyper 0)'
+      #   type: basic
+      #   from: { key_code: delete_forward, modifiers: { mandatory: [ left_command,left_control,left_shift,left_option,right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { key_code: keypad_0 , modifiers: [ left_command,left_control,left_shift,left_option ] } ]
+
+      - description: 'F5 (f5) = Hyper + f5'
+        type: basic
+        from: { key_code: f5, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: f5, modifiers: [ left_command,left_control,left_shift,left_option ] } ]
+ 
+      - description: 'F6 (f6) = Hyper + f6'
+        type: basic
+        from: { key_code: f6, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: f6, modifiers: [ left_command,left_control,left_shift,left_option ] } ]
+ 
+      - description: 'F7 (scan_previous_track) = Hyper + f7'
+        type: basic
+        from: { consumer_key_code: scan_previous_track, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: f7, modifiers: [ left_command,left_control,left_shift,left_option ] } ]
+      
+      - description: 'F8 (play_or_pause) = Hyper + f8'
+        type: basic
+        from: { consumer_key_code: play_or_pause, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: f8, modifiers: [ left_command,left_control,left_shift,left_option ] } ]
+
+      - description: 'F9 (play_or_pause) = Hyper + f9'
+        type: basic
+        from: { consumer_key_code: scan_next_track, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: f9, modifiers: [ left_command,left_control,left_shift,left_option ] } ]
+
+      - description: 'F10 (mute) = Hyper + f10'
+        type: basic
+        from: { consumer_key_code: mute, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: f10, modifiers: [ left_command,left_control,left_shift,left_option ] } ]
+
+      - description: 'F11 (volume_decrement) = Hyper + f11'
+        type: basic
+        from: { consumer_key_code: volume_decrement, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: f11, modifiers: [ left_command,left_control,left_shift,left_option ] } ]
+
+      - description: 'F12 (volume_increment) = Hyper + f12'
+        type: basic
+        from: { consumer_key_code: volume_increment, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: f12, modifiers: [ left_command,left_control,left_shift,left_option ] } ]
