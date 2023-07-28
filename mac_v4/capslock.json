@@ -7168,6 +7168,110 @@
       "description": "Hyper Media Keys",
       "manipulators": [
         {
+          "description": "F1 (f1) = Hyper + f1",
+          "type": "basic",
+          "from": {
+            "key_code": "f1",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f1",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F1 (f1) = Hyper + f1",
+          "type": "basic",
+          "from": {
+            "key_code": "f2",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f2",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F2 (f2) = Hyper + f2",
+          "type": "basic",
+          "from": {
+            "key_code": "f3",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f3",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "F4 (f4) = Hyper + f4",
+          "type": "basic",
+          "from": {
+            "key_code": "f4",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f4",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
           "description": "F5 (f5) = Hyper + f5",
           "type": "basic",
           "from": {
