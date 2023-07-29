@@ -1,7 +1,12 @@
+
 ; Tips: Windows Only
 ; 1. Install autohotkey 2 from https://www.autohotkey.com/
 ; 2. Run this script by double clicking on it
 
+;;;;;;;;;;;;;;; Config ;;;;;;;;;;;;;;; 
+ModifyAlt := true ; Causes Alt to behave simililarly to the Command key on macOS
+ModifyWin := false ; Adds mouse controls when holding Capslock + Windows key
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Resources: https://www.autohotkey.com/docs/v1/Hotkeys.htm#Symbols
 ; Symbols - [#, ^, !, +] are modifiers
 ; # = Windows Key
@@ -13,37 +18,50 @@
 ; This script creates a new layer on your keyboard when Capslock is held down
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Experimental. Command simulation using Alt key.
-!s::Send, {AltUp}^{s} ; Save
-!a::Send, {AltUp}^{a} ; Select All
-!c::Send, {AltUp}^{c} ; Copy
-!v::Send, {AltUp}^{v} ; Paste
-!x::Send, {AltUp}^{x} ; Cut
-!z::Send, {AltUp}^{z} ; Undo
-!y::Send, {AltUp}^{y} ; Redo
-!f::Send, {AltUp}^{f} ; Find
-!h::Send, {AltUp}^{h} ; Replace
-!n::Send, {AltUp}^{n} ; New
-!o::Send, {AltUp}^{o} ; Open 
-!p::Send, {AltUp}^{p} ; Print / Open file in VSCode
-!w::Send, {AltUp}^{w} ; Close
-!t::Send, {AltUp}^{t} ; New Tab
-!+t::Send, {AltUp}^+{t} ; Reopen Tab
-!q::Send, {AltUp}!{F4} ; Quit
-!+w::Send, {AltUp}!{F4} ; Quit
-!`:: ; Implement cycling between same app Alt + ` = Command + `
-WinGetClass, OldClass, A
-WinGet, ActiveProcessName, ProcessName, A
-WinGet, WinClassCount, Count, ahk_exe %ActiveProcessName%
-IF WinClassCount = 1
-    Return
-loop, 2 {
-  WinSet, Bottom,, A
-  WinActivate, ahk_exe %ActiveProcessName%
-  WinGetClass, NewClass, A
-  if (OldClass <> "CabinetWClass" or NewClass = "CabinetWClass")
-    break
-}
+#if (ModifyAlt = true)
+    !Backspace::Send +{Home}+{Home}{BackSpace} ; Delete till line head
+    !s::Send, {AltUp}^{s} ; Save
+    !a::Send, {AltUp}^{a} ; Select All
+    !c::Send, {AltUp}^{c} ; Copy
+    !v::Send, {AltUp}^{v} ; Paste
+    !x::Send, {AltUp}^{x} ; Cut
+    !z::Send, {AltUp}^{z} ; Undo
+    !+z::Send, {AltUp}^+{z} ; Redo
+    !y::Send, {AltUp}^{y} ; Redo
+    !f::Send, {AltUp}^{f} ; Find
+    !h::Send, {AltUp}^{h} ; Replace
+    !n::Send, {AltUp}^{n} ; New
+    !o::Send, {AltUp}^{o} ; Open 
+    !l::Send, {AltUp}^{l} ; Go to address bar
+    !p::Send, {AltUp}^{p} ; Print / Open file in VSCode
+    !+p::Send, {AltUp}^+{p} ; Command Palette in VSCode
+    !w::Send, {AltUp}^{w} ; Close
+    !t::Send, {AltUp}^{t} ; New Tab
+    !+t::Send, {AltUp}^+{t} ; Reopen Tab
+    !q::Send, {AltUp}!{F4} ; Quit
+    !+w::Send, {AltUp}!{F4} ; Quit
+    ![::Send, {AltUp}^{[} ; Outdent line
+    !]::Send, {AltUp}^{]} ; Indent line
+
+    ; Implement cycling between same app Alt + ` = Command + ` https://superuser.com/a/1721255
+    !`:: 
+    WinGetClass, OldClass, A
+    WinGet, ActiveProcessName, ProcessName, A
+    WinGet, WinClassCount, Count, ahk_exe %ActiveProcessName%
+    IF WinClassCount = 1
+        Return
+    loop, 2 {
+    WinSet, Bottom,, A
+    WinActivate, ahk_exe %ActiveProcessName%
+    WinGetClass, NewClass, A
+    if (OldClass <> "CabinetWClass" or NewClass = "CabinetWClass")
+        break
+    }
+#if
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 #WinActivateForce ; https://www.autohotkey.com/docs/v2/lib/_WinActivateForce.htm
 
@@ -54,11 +72,12 @@ KeyWait, CapsLock
 IF A_ThisHotkey = *CapsLock
     Send, {Escape} ; Press escape if Capslock is released
 Return
++Capslock::Capslock ; Press Shift + Capslock to toggle Capslock
 
-#if GetKeyState("CapsLock", "P") and not GetKeyState("LAlt", "P") and not GetKeyState("LWin", "P") ; Start of Capslock modifier
+#if (GetKeyState("CapsLock", "P") and not GetKeyState("LAlt", "P") and not GetKeyState("LWin", "P")) ; Start of Capslock modifier
 Escape::CapsLock ; Press Capslock + Escape to toggle Capslock
+Shift::CapsLock ; Press Capslock + Shift to toggle Capslock
 
-;
 ;
 ; Cursor Movement
 h::Left
@@ -130,12 +149,15 @@ Enter::Click Left
 ; Required to prevent the modifiers from being passed to the destination key
 LAlt::
 LWin::
+; KeyWait, LWin
+IF A_ThisHotkey = *LWin
+Return
 
 #if ; End of Capslock modifier
 
 
 ; Alt Only modifier
-#if GetKeystate("CapsLock", "P") and GetKeyState("LAlt", "P") and not GetKeyState("LWin", "P")
+#if (GetKeystate("CapsLock", "P") and GetKeyState("LAlt", "P") and not GetKeyState("LWin", "P"))
 
 ;
 ;
@@ -179,7 +201,7 @@ Backspace::Send +{End}{Backspace} ; Delete till line end
 
 
 ; Win Only modifier
-#if GetKeystate("CapsLock", "P") and GetKeyState("LWin", "P") and not GetKeyState("LAlt", "P")
+#if (GetKeystate("CapsLock", "P") and GetKeyState("LWin", "P") and not GetKeyState("LAlt", "P"))
 
 ;
 ;
@@ -187,7 +209,8 @@ Backspace::Send +{End}{Backspace} ; Delete till line end
 ; TODO: Find solution to Capslock + Win + L locking Windows
 o::XButton1
 p::XButton2
-i::Click Right
-u::Click Left
+; i::Click Right
+i::Send, {LWinUp}{Click Right}
+u::Send, {LWinUp}{Click Left}
 
 #if ; End of Win modifier
