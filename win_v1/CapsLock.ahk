@@ -1,3 +1,7 @@
+; Bugs
+; 1. Pressing Capslock + a modifier (LAlt or LWin) triggers a key (currently )
+
+
 ; Tips: Windows Only
 ; 1. Install autohotkey 2 from https://www.autohotkey.com/
 ; 2. Run this script by double clicking on it
@@ -144,11 +148,10 @@ Return
     ;
     ; Disables LAlt and LWin while Capslock is pressed
     ; Required to prevent the modifiers from being passed to the destination key
-    LAlt::
+    LAlt:: return
     LWin::
         KeyWait, LWin
-        IF A_ThisHotkey = *LWin
-            Return
+        return
 
 #if ; End of Capslock modifier
 
