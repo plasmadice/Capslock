@@ -1,26 +1,39 @@
-; Bugs
-; 1. Pressing Capslock + a modifier (LAlt or LWin) triggers a key (currently )
+;;;;;;;;; Auto Execute Section - DO NOT EDIT! ;;;;;;;;;;
+#WinActivateForce ; Don't edit this: https://www.autohotkey.com/docs/v2/lib/_WinActivateForce.htm
+SetCapsLockState, AlwaysOff ; Makes it so that Capslock is "always" off
+SetStoreCapslockMode, Off ; Makes it so that capslock is not aumatically toggled when triggering a keybind 
+; https://www.autohotkey.com/docs/v1/lib/SetStoreCapslockMode.htm
+
+
+;;;;;;;;;;;;;;; Config ;;;;;;;;;;;;;;;
+ModifyAlt := true ; Causes Alt to behave simililarly to the Command key on macOS
+EnableCapsLock := true ; Enables Capslock as a modifier
+
+;; The below settings are disabled if EnableCapsLock is false or 0
+EnableCapsLockAlt := true ; Enables Capslock + Alt as a modifier
+; EnableCapsLockWin := true ; Adds mouse controls when holding Capslock + Windows key - Disabled until I find solution to Windows key
+;;;;;;;;;;;; End Config ;;;;;;;;;;;;;;
+
 
 
 ; Tips: Windows Only
 ; 1. Install autohotkey 2 from https://www.autohotkey.com/
 ; 2. Run this script by double clicking on it
 
-;;;;;;;;;;;;;;; Config ;;;;;;;;;;;;;;;
-ModifyAlt := true ; Causes Alt to behave simililarly to the Command key on macOS
-EnableWin := true ; Adds mouse controls when holding Capslock + Windows key
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Resources: https://www.autohotkey.com/docs/v1/Hotkeys.htm#Symbols
-; Symbols - [#, ^, !, +] are modifiers
+; Hotkey Resource: https://www.autohotkey.com/docs/v1/Hotkeys.htm#Symbols
+; Symbol Legend - [#, ^, !, +] are modifiers
 ; # = Windows Key
 ; ^ = Ctrl
 ; ! = Alt
 ; + = Shift
 
 ; Basic explanation
-; This script creates a new layer on your keyboard when Capslock is held down
+; ModifyAlt: Enables Alt to behave simililarly to the Command key on macOS
+; EnableCapsLock: Disables CapsLock. Makes CapsLock trigger Escape if it's released without pressing anything else. Creates a new layer on your keyboard when Capslock is held down. Adds keybinds to Capslock + [key] to trigger the keybinds below.
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;; DO NOT EDIT BELOW THIS LINE ;;;;;;;;;;
+
+
 ; Experimental. Command simulation using Alt key.
 #if (ModifyAlt = true)
     !Backspace::Send +{Home}+{Home}{BackSpace} ; Delete till line head
@@ -31,9 +44,9 @@ EnableWin := true ; Adds mouse controls when holding Capslock + Windows key
     !x::Send, {AltUp}^{x} ; Cut
     !z::Send, {AltUp}^{z} ; Undo
     !+z::Send, {AltUp}^+{z} ; Redo
-    !y::Send, {AltUp}^{y} ; Redo
     !f::Send, {AltUp}^{f} ; Find
-    !h::Send, {AltUp}^{h} ; Replace
+    !h::Send, {AltUp}^{h} ; History
+    !y::Send, {AltUp}^{h} ; History
     !n::Send, {AltUp}^{n} ; New
     !o::Send, {AltUp}^{o} ; Open
     !l::Send, {AltUp}^{l} ; Go to address bar
@@ -64,18 +77,19 @@ EnableWin := true ; Adds mouse controls when holding Capslock + Windows key
 #if
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-#WinActivateForce ; https://www.autohotkey.com/docs/v2/lib/_WinActivateForce.htm
-
-SetCapsLockState, AlwaysOff
-
 *CapsLock::
     KeyWait, CapsLock
     IF A_ThisHotkey = *CapsLock
-        Send, {Escape} ; Press escape if Capslock is released
+        ; #If (GetKeyState("CapsLock", "T"))
+            ; Send, {CapLock Up}
+        ;     SetCapsLockState, Off
+        ;     Return
+        ; #If
+        Send, {Escape} ; Press escape if Capslock is pressed and released without any other key
 Return
 +Capslock::Capslock ; Press Shift + Capslock to toggle Capslock
 
-#if (GetKeyState("CapsLock", "P") and not GetKeyState("LAlt", "P") and not GetKeyState("LWin", "P")) ; Start of Capslock modifier
+#if (EnableCapsLock = true and GetKeyState("CapsLock", "P") and not GetKeyState("LAlt", "P") and not GetKeyState("LWin", "P")) ; Start of Capslock modifier
     Escape::CapsLock ; Press Capslock + Escape to toggle Capslock
     Shift::CapsLock ; Press Capslock + Shift to toggle Capslock
 
@@ -155,8 +169,8 @@ Return
 
 #if ; End of Capslock modifier
 
-; Alt Only modifier
-#if (GetKeystate("CapsLock", "P") and GetKeyState("LAlt", "P") and not GetKeyState("LWin", "P"))
+; Alt Modifier
+#if (EnableCapsLock = true and EnableCapsLockAlt = true and GetKeystate("CapsLock", "P") and GetKeyState("LAlt", "P") and not GetKeyState("LWin", "P"))
 
     ;
     ;
@@ -199,8 +213,7 @@ Return
 #if ; End of Alt modifier
 
 ; Win Only modifier
-#if (EnableWin = true and GetKeystate("CapsLock", "P") and GetKeyState("LWin", "P") and not GetKeyState("LAlt", "P"))
-
+#if (EnableCapsLock = true and EnableCapsLockWin = true and GetKeystate("CapsLock", "P") and GetKeyState("LWin", "P") and not GetKeyState("LAlt", "P"))
     ;
     ;
     ; Win Mouse Control
