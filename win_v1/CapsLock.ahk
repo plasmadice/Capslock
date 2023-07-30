@@ -1,9 +1,8 @@
 ;;;;;;;;; Auto Execute Section - DO NOT EDIT! ;;;;;;;;;;
 #WinActivateForce ; Don't edit this: https://www.autohotkey.com/docs/v2/lib/_WinActivateForce.htm
 SetCapsLockState, AlwaysOff ; Makes it so that Capslock is "always" off
-SetStoreCapslockMode, Off ; Makes it so that capslock is not aumatically toggled when triggering a keybind 
+SetStoreCapslockMode, Off ; Makes it so that capslock is not aumatically toggled when triggering a keybind
 ; https://www.autohotkey.com/docs/v1/lib/SetStoreCapslockMode.htm
-
 
 ;;;;;;;;;;;;;;; Config ;;;;;;;;;;;;;;;
 ModifyAlt := true ; Causes Alt to behave simililarly to the Command key on macOS
@@ -13,8 +12,6 @@ EnableCapsLock := true ; Enables Capslock as a modifier
 EnableCapsLockAlt := true ; Enables Capslock + Alt as a modifier
 ; EnableCapsLockWin := true ; Adds mouse controls when holding Capslock + Windows key - Disabled until I find solution to Windows key
 ;;;;;;;;;;;; End Config ;;;;;;;;;;;;;;
-
-
 
 ; Tips: Windows Only
 ; 1. Install autohotkey 2 from https://www.autohotkey.com/
@@ -31,8 +28,11 @@ EnableCapsLockAlt := true ; Enables Capslock + Alt as a modifier
 ; ModifyAlt: Enables Alt to behave simililarly to the Command key on macOS
 ; EnableCapsLock: Disables CapsLock. Makes CapsLock trigger Escape if it's released without pressing anything else. Creates a new layer on your keyboard when Capslock is held down. Adds keybinds to Capslock + [key] to trigger the keybinds below.
 
-;;;;;;;;;; DO NOT EDIT BELOW THIS LINE ;;;;;;;;;;
+; Possible future additions:
+; 1. Add mouse controls when holding Capslock + Windows key
+; 2. Alt + Click to Ctrl + Click ??
 
+;;;;;;;;;; DO NOT EDIT BELOW THIS LINE ;;;;;;;;;;
 
 ; Experimental. Command simulation using Alt key.
 #if (ModifyAlt = true)
@@ -81,7 +81,7 @@ EnableCapsLockAlt := true ; Enables Capslock + Alt as a modifier
     KeyWait, CapsLock
     IF A_ThisHotkey = *CapsLock
         ; #If (GetKeyState("CapsLock", "T"))
-            ; Send, {CapLock Up}
+        ; Send, {CapLock Up}
         ;     SetCapsLockState, Off
         ;     Return
         ; #If
@@ -165,7 +165,7 @@ Return
     LAlt:: return
     LWin::
         KeyWait, LWin
-        return
+    return
 
 #if ; End of Capslock modifier
 
