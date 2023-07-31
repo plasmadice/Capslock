@@ -1653,10 +1653,10 @@ rules:
         from: { key_code: '0', modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: '0' , modifiers: [ left_shift ] } ]
 
-      - description: 'hyphen = _'
+      - description: 'hyphen = — (Em dash)'
         type: basic
         from: { key_code: hyphen, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: hyphen , modifiers: [ left_shift ] } ]
+        to: [ { key_code: hyphen , modifiers: [ left_shift,left_option ] } ]
         
       - description: 'equal_sign = +'
         type: basic
