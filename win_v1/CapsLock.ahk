@@ -163,7 +163,8 @@ Return
     ;
     ; Disables LAlt and LWin while Capslock is pressed
     ; Required to prevent the modifiers from being passed to the destination key
-    ; LAlt:: return ; Disabling this fixes some issues
+    LAlt:: return 
+    LAlt Up:: return
 
     LWin::return
     LWin Up::return
@@ -175,7 +176,7 @@ Return
     ;
     ;
     ; Alt Cursor Movement
-    h::+Left
+    h::+Left ; Select Left
     j::+Down
     k::+Up
     l::+Right
