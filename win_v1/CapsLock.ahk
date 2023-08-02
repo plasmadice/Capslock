@@ -1,11 +1,11 @@
 ;;;;;;;;; Auto Execute Section - DO NOT EDIT! ;;;;;;;;;;
 #WinActivateForce ; Don't edit this: https://www.autohotkey.com/docs/v2/lib/_WinActivateForce.htm
 SetCapsLockState, AlwaysOff ; Makes it so that Capslock is "always" off
-SetStoreCapslockMode, Off ; Makes it so that capslock is not aumatically toggled when triggering a keybind
+SetStoreCapslockMode, Off ; Makes it so that capslock is not automatically toggled when triggering a keybind
 ; https://www.autohotkey.com/docs/v1/lib/SetStoreCapslockMode.htm
 
 ;;;;;;;;;;;;;;; Config ;;;;;;;;;;;;;;;
-ModifyAlt := true ; Causes Alt to behave simililarly to the Command key on macOS
+ModifyAlt := true ; Causes Alt to behave similar to the Command key on macOS
 EnableCapsLock := true ; Enables Capslock as a modifier
 
 ;; The below settings are disabled if EnableCapsLock is false or 0
@@ -148,7 +148,7 @@ Return
 
     ;
     ;
-    ; App Shortcuts TODO: Currently only focuses - Open window if focus fails
+    ; App Shortcuts 
     e::WinActivate, ahk_exe chrome.exe
     t::WinActivate, ahk_exe code.exe
     ; y ??
