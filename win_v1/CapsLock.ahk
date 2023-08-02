@@ -10,7 +10,7 @@ EnableCapsLock := true ; Enables Capslock as a modifier
 
 ;; The below settings are disabled if EnableCapsLock is false or 0
 EnableCapsLockAlt := true ; Enables Capslock + Alt as a modifier
-; EnableCapsLockWin := true ; Adds mouse controls when holding Capslock + Windows key - Disabled until I find solution to Windows key
+; EnableCapsLockWin := false ; Adds mouse controls when holding Capslock + Windows key - Disabled until I find solution to Windows key
 ;;;;;;;;;;;; End Config ;;;;;;;;;;;;;;
 
 ; Tips: Windows Only
@@ -37,29 +37,29 @@ EnableCapsLockAlt := true ; Enables Capslock + Alt as a modifier
 ; Experimental. Command simulation using Alt key.
 #if (ModifyAlt = true)
     !Backspace::Send +{Home}+{Home}{BackSpace} ; Delete till line head
-    !s::Send, {AltUp}^{s} ; Save
-    !a::Send, {AltUp}^{a} ; Select All
-    !c::Send, {AltUp}^{c} ; Copy
-    !v::Send, {AltUp}^{v} ; Paste
-    !x::Send, {AltUp}^{x} ; Cut
-    !z::Send, {AltUp}^{z} ; Undo
-    !+z::Send, {AltUp}^+{z} ; Redo
-    !f::Send, {AltUp}^{f} ; Find
-    !h::Send, {AltUp}^{h} ; History
-    !y::Send, {AltUp}^{h} ; History
-    !n::Send, {AltUp}^{n} ; New
-    !o::Send, {AltUp}^{o} ; Open
-    !l::Send, {AltUp}^{l} ; Go to address bar
-    !p::Send, {AltUp}^{p} ; Print / Open file in VSCode
-    !+p::Send, {AltUp}^+{p} ; Command Palette in VSCode
-    !w::Send, {AltUp}^{w} ; Close
-    !t::Send, {AltUp}^{t} ; New Tab
-    !+t::Send, {AltUp}^+{t} ; Reopen Tab
-    !q::Send, {AltUp}!{F4} ; Quit
-    !+w::Send, {AltUp}!{F4} ; Quit
-    !m::Send, {AltUp}#{Down 2} ; Minimize window
-    ![::Send, {AltUp}^{[} ; Outdent line
-    !]::Send, {AltUp}^{]} ; Indent line
+    !s::Send, {AltUp}^{s}{AltDown} ; Save
+    !a::Send, {AltUp}^{a}{AltDown} ; Select All
+    !c::Send, {AltUp}^{c}{AltDown} ; Copy
+    !v::Send, {AltUp}^{v}{AltDown} ; Paste
+    !x::Send, {AltUp}^{x}{AltDown} ; Cut
+    !z::Send, {AltUp}^{z}{AltDown} ; Undo
+    !+z::Send, {AltUp}^+{z}{AltDown}{ShiftDown} ; Redo
+    !f::Send, {AltUp}^{f}{AltDown} ; Find
+    !h::Send, {AltUp}^{h}{AltDown} ; History
+    !y::Send, {AltUp}^{h}{AltDown} ; History
+    !n::Send, {AltUp}^{n}{AltDown} ; New
+    !o::Send, {AltUp}^{o}{AltDown} ; Open
+    !l::Send, {AltUp}^{l} ;{AltDown} Go to address bar
+    !p::Send, {AltUp}^{p}{AltDown}{ShiftDown} ;{AltDown} Print / Open file in VSCode
+    !+p::Send, {AltUp}^+{p}{ShiftDown} ; Command Palette in VSCode
+    !w::Send, {AltUp}^{w}{AltDown} ; Close
+    !t::Send, {AltUp}^{t}{AltDown} ; New Tab
+    !+t::Send, {AltUp}^+{t}{AltDown}{ShiftDown} ; Reopen Tab
+    !q::Send, {AltUp}!{F4}{AltDown} ; Quit
+    !+w::Send, {AltUp}!{F4}{AltDown}{ShiftDown} ; Quit
+    !m::Send, {AltUp}#{Down 2}{AltDown} ; Minimize window
+    ![::Send, {AltUp}^{[}{AltDown} ; Outdent line
+    !]::Send, {AltUp}^{]}{AltDown} ; Indent line
 
     ; Implement cycling between same app Alt + ` = Command + ` https://superuser.com/a/1721255
     !`::
@@ -163,11 +163,10 @@ Return
     ;
     ; Disables LAlt and LWin while Capslock is pressed
     ; Required to prevent the modifiers from being passed to the destination key
-    LAlt:: return
-    LWin::
-        KeyWait, LWin
-    return
+    ; LAlt:: return ; Disabling this fixes some issues
 
+    LWin::return
+    LWin Up::return
 #if ; End of Capslock modifier
 
 ; Alt Modifier
@@ -221,7 +220,16 @@ Return
     ; TODO: Find solution to Capslock + Win + L locking Windows
     o::Send, {LWinUp}{XButton1}
     p::Send, {LWinUp}{XButton2}
-    i::Send, {LWinUp}{Click Right}
-    u::Send, {LWinUp}{Click Left}
+    ; i::Send, {LWinUp}{Click Right}
+    ; u::Send, {LWinUp}{Click Left}
+
+    ;
+    ;
+    ; Window Control
+    ; h::Send, {LWinUp}#{Left}
+    ; j::Send, {LWinUp}#{Down}
+    ; k::Send, {LWinUp}#{Up}
+    ; l::Send, {LWinUp}#{Right}
+    ; u::Send, {LWinUp}#{Up 2}
 
 #if ; End of Win modifier
