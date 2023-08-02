@@ -5965,7 +5965,7 @@
           ]
         },
         {
-          "description": "hyphen = _",
+          "description": "hyphen = — (Em dash)",
           "type": "basic",
           "from": {
             "key_code": "hyphen",
@@ -5982,7 +5982,8 @@
             {
               "key_code": "hyphen",
               "modifiers": [
-                "left_shift"
+                "left_shift",
+                "left_option"
               ]
             }
           ]
