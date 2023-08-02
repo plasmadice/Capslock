@@ -107,7 +107,7 @@ The script uses a variety of key combinations to accomplish tasks. The major key
 - Capslock + Alt + Backspace: Delete till line end.
 
 #### CapsLock + Win Keybinds
-- Capslock + Win + o: XButton1 click.
-- Capslock + Win + p: XButton2 click.
+- Capslock + Win + o: XButton1 click - Mouse 4.
+- Capslock + Win + p: XButton2 click - Mouse 5.
 - Capslock + Win + i: Right click.
 - Capslock + Win + u: Left click.

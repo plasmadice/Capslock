@@ -57,6 +57,7 @@ EnableCapsLockAlt := true ; Enables Capslock + Alt as a modifier
     !+t::Send, {AltUp}^+{t} ; Reopen Tab
     !q::Send, {AltUp}!{F4} ; Quit
     !+w::Send, {AltUp}!{F4} ; Quit
+    !m::Send, {AltUp}#{Down 2} ; Minimize window
     ![::Send, {AltUp}^{[} ; Outdent line
     !]::Send, {AltUp}^{]} ; Indent line
 
