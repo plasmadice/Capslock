@@ -19,91 +19,88 @@
 
 The script uses a variety of key combinations to accomplish tasks. The major keys used in the script are `Capslock`, `Alt`, `Ctrl`, and `Shift` keys. Below is a list of keybindings available in the script:
 
-## Alt keybinds
+## General Alt modifications
 - Alt + Backspace: Delete till line head
-- Alt + s: Save
-- Alt + a: Select All
-- Alt + c: Copy
-- Alt + v: Paste
-- Alt + x: Cut
-- Alt + z: Undo
-- Alt + Shift + z: Redo
-- Alt + f: Find
-- Alt + h: History
-- Alt + y: History
-- Alt + n: New
-- Alt + o: Open
-- Alt + l: Go to address bar
-- Alt + p: Print / Open file in VSCode
-- Alt + Shift + p: Command Palette in VSCode
-- Alt + w: Close
-- Alt + t: New Tab
-- Alt + Shift + t: Reopen Tab
-- Alt + q: Quit
-- Alt + Shift + w: Quit
-- Alt + m: Minimize window
+- Alt + S: Save
+- Alt + A: Select All
+- Alt + C: Copy
+- Alt + V: Paste
+- Alt + X: Cut
+- Alt + Shift + Z: Redo
+- Alt + Z: Undo
+- Alt + F: Find
+- Alt + H: History
+- Alt + Y: History
+- Alt + N: New
+- Alt + O: Open
+- Alt + L: Go to address bar
+- Alt + P: Print / Open file in VSCode
+- Alt + Shift + P: Command Palette in VSCode
+- Alt + W: Close
+- Alt + T: New Tab
+- Alt + Shift + T: Reopen Tab
+- Alt + Q: Quit
+- Alt + Shift + W: Quit
+- Alt + M: Minimize window
 - Alt + [: Outdent line
 - Alt + ]: Indent line
-- Alt + `: Cycle between windows of the same app
+- Alt + `: Cycle between same app
 
-## CapsLock keybinds
-- Capslock: Press escape if Capslock is pressed and released without any other key
-- Shift + Capslock: Toggle Capslock
-- Capslock + Escape: Toggle Capslock
-- Capslock + Shift: Toggle Capslock
-- Capslock + h: Move cursor Left
-- Capslock + j: Move cursor Down
-- Capslock + k: Move cursor Up
-- Capslock + l: Move cursor Right
-- Capslock + g: Far move Left
-- Capslock + ': Far move Right
-- Capslock + i: Move to Start of Line
-- Capslock + o: Move to End of Line
-- Capslock + Tab: Task View
-- Capslock + q: Close app
-- Capslock + w: Close tab
-- Capslock + a: Task view
-- Capslock + s: Next tab
-- Capslock + t: Reopen tab or window
-- Capslock + n: Delete a word before the cursor
-- Capslock + m: Delete a character before the cursor
-- Capslock + ,: Delete a character after the cursor
-- Capslock + .: Delete a word after the cursor
-- Capslock + Backspace: Delete a word before the cursor
-- Capslock + z: Undo
-- Capslock + x: Cut
-- Capslock + c: Interrupt (SIGINT)
-- Capslock + v: Paste / Vim Prefix
-- Capslock + b: Tmux Prefix
-- Capslock + `: Toggle chrome dev tools
-- Capslock + f: Find
-- Capslock + r: Redo
-- Capslock + u: Scroll up
-- Capslock + d: Scroll down
-- Capslock + :+: Enter a colon
-- Capslock + /: Comment
-- Capslock + e: Activate Chrome
-- Capslock + t: Activate VSCode
-- Capslock + Enter: Left Click
+## CapsLock as a modifier (when CapsLock is pressed and held)
+- CapsLock + Escape: Toggles CapsLock
+- CapsLock + Shift: Toggles CapsLock
+- CapsLock + H: Cursor Left
+- CapsLock + J: Cursor Down
+- CapsLock + K: Cursor Up
+- CapsLock + L: Cursor Right
+- CapsLock + G: Far Left
+- CapsLock + ': Far Right
+- CapsLock + I: Start of line
+- CapsLock + O: End of line
+- CapsLock + Tab: Task View
+- CapsLock + Q: Close App
+- CapsLock + W: Close Tab
+- CapsLock + A: Task View
+- CapsLock + S: Next Tab
+- CapsLock + T: Reopen Tab or Window
+- CapsLock + N: Delete Word Before
+- CapsLock + M: Delete Character Before
+- CapsLock + ,: Delete Character After
+- CapsLock + .: Delete Word After
+- CapsLock + Backspace: Delete Word Before
+- CapsLock + Z: Undo
+- CapsLock + X: Cut
+- CapsLock + C: Copy / Interrupt (SIGINT)
+- CapsLock + V: Paste / Vim Prefix
+- CapsLock + B: Tmux Prefix
+- CapsLock + `: Toggle Chrome Dev Tools
+- CapsLock + F: Find
+- CapsLock + R: Redo
+- CapsLock + U: Scroll Up
+- CapsLock + D: Scroll Down
+- CapsLock + ::+:: Colon
+- CapsLock + /: Comment
+- CapsLock + E: Activate Chrome
+- CapsLock + T: Activate VSCode
+- CapsLock + Enter: Left Click
+- CapsLock + Space: Move Window (Direction depends on next press)
+- CapsLock + LAlt: Null (Prevent modifiers from passing to destination key)
+- CapsLock + LWin: Null (Prevent modifiers from passing to destination key)
 
-## CapsLock + Alt keybinds
-- Capslock + Alt + h: Select Left
-- Capslock + Alt + j: Select Down
-- Capslock + Alt + k: Select Up
-- Capslock + Alt + l: Select Right
-- Capslock + Alt + g: Far select Left
-- Capslock + Alt + ': Far select Right
-- Capslock + Alt + i: Select to Start of Line
-- Capslock + Alt + o: Select to End of Line
-- Capslock + Alt + s: Previous Tab
-- Capslock + Alt + t: Reopen Tab or Window
-- Capslock + Alt + w: Close App
-- Capslock + Alt + n: Delete till line head
-- Capslock + Alt + m: Delete a word ahead
-- Capslock + Alt + ,: Delete a word after
-- Capslock + Alt + .: Delete till line end
-- Capslock + Alt + Backspace: Delete till line end
-
-## CapsLock + Windows keybinds (work in progress)
-- Capslock + Win + o: Press Mouse Button 4
-- Capslock + Win + p: Press Mouse Button 5
+## CapsLock + Alt as a modifier
+- CapsLock + Alt + H: Select Left
+- CapsLock + Alt + J: Select Down
+- CapsLock + Alt + K: Select Up
+- CapsLock + Alt + L: Select Right
+- CapsLock + Alt + G: Far Select Left
+- CapsLock + Alt + ': Far Select Right
+- CapsLock + Alt + I: Select to Start of Line
+- CapsLock + Alt + O: Select to End of Line
+- CapsLock + Alt + S: Previous Tab
+- CapsLock + Alt + T: Reopen Tab or Window
+- CapsLock + Alt + W: Close App
+- CapsLock + Alt + N: Delete till line head
+- CapsLock + Alt + M: Delete word ahead
+- CapsLock + Alt + ,: Delete word after
+- CapsLock + Alt + .: Delete till line end
+- CapsLock + Alt + Backspace: Delete till line end

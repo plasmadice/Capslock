@@ -36,14 +36,14 @@ EnableCapsLockAlt := true ; Enables Capslock + Alt as a modifier
 
 ; Experimental. Command simulation using Alt key.
 #if (ModifyAlt = true)
-    !Backspace::Send +{Home}+{Home}{BackSpace} ; Delete till line head
+    !Backspace::Send {AltUp}+{Home}+{Home}{BackSpace}{AltDown} ; Delete till line head
     !s::Send, {AltUp}^{s}{AltDown} ; Save
     !a::Send, {AltUp}^{a}{AltDown} ; Select All
     !c::Send, {AltUp}^{c}{AltDown} ; Copy
     !v::Send, {AltUp}^{v}{AltDown} ; Paste
     !x::Send, {AltUp}^{x}{AltDown} ; Cut
+    !+z::Send, ^+z ; Redo
     !z::Send, {AltUp}^{z}{AltDown} ; Undo
-    !+z::Send, {AltUp}^+{z}{AltDown}{ShiftDown} ; Redo
     !f::Send, {AltUp}^{f}{AltDown} ; Find
     !h::Send, {AltUp}^{h}{AltDown} ; History
     !y::Send, {AltUp}^{h}{AltDown} ; History
@@ -81,14 +81,18 @@ EnableCapsLockAlt := true ; Enables Capslock + Alt as a modifier
 *CapsLock::
     KeyWait, CapsLock
     IF A_ThisHotkey = *CapsLock
-        ; #If (GetKeyState("CapsLock", "T"))
-        ; Send, {CapLock Up}
-        ;     SetCapsLockState, Off
-        ;     Return
-        ; #If
+        ; Send, {CapsLock Up}
         Send, {Escape} ; Press escape if Capslock is pressed and released without any other key
 Return
-+Capslock::Capslock ; Press Shift + Capslock to toggle Capslock
++CapsLock::CapsLock ; Press Shift + Capslock to toggle Capslock
+; Release all modifiers
+; *CapsLock Up::
+;     Send, {LShift Up}
+;     Send, {LControl Up}
+;     Send, {LAlt Up}
+;     Send, {LWin Up}
+
+~Space & CapsLock Up::Send, {LWin Up}
 
 #if (EnableCapsLock = true and GetKeyState("CapsLock", "P") and not GetKeyState("LAlt", "P") and not GetKeyState("LWin", "P")) ; Start of Capslock modifier
     Escape::CapsLock ; Press Capslock + Escape to toggle Capslock
@@ -161,6 +165,32 @@ Return
 
     ;
     ;
+    ; Window Control
+    Space::
+        Send, {LWin Down}
+        KeyWait, Space
+        ; MsgBox %A_ThisHotkey%
+        IF A_ThisHotkey = *h
+            Send, {Left} ; Move window left
+        return
+        IF A_ThisHotkey = *j
+            Send, {Down} ; Move window down
+        return
+        IF A_ThisHotkey = *k
+            Send, {Up} ; Move window up
+        return
+        IF A_ThisHotkey = *l
+            Send, {Right} ; Move window right
+        return
+    *Space Up::
+        IF A_ThisHotkey = *Space Up
+            Send, {LWin Up}
+        Else
+            MsgBox %A_ThisHotkey%
+        return
+    
+    ;
+    ;
     ; Disables LAlt and LWin while Capslock is pressed
     ; Required to prevent the modifiers from being passed to the destination key
     LAlt:: return 
@@ -168,6 +198,7 @@ Return
 
     LWin::return
     LWin Up::return
+
 #if ; End of Capslock modifier
 
 ; Alt Modifier
@@ -175,10 +206,7 @@ Return
 
     ;
     ;
-    ; Alt Cursor Movement
-    h::+Left ; Select Left
-    j::+Down
-    k::+Up
+    ; Alt Cursor Movement h::+Left ; Select Left j::+Down k::+Up
     l::+Right
     ; Alt Far Select Movement
     g::+^Left
