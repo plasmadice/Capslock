@@ -1,6 +1,7 @@
 ;;;;;;;;; Auto Execute Section - DO NOT EDIT! ;;;;;;;;;;
 #WinActivateForce ; Don't edit this: https://www.autohotkey.com/docs/v2/lib/_WinActivateForce.htm
 SetCapsLockState, AlwaysOff ; Makes it so that Capslock is "always" off
+SetNumLockState, On ; Makes it so that Numlock is on
 SetStoreCapslockMode, Off ; Makes it so that capslock is not automatically toggled when triggering a keybind
 ; https://www.autohotkey.com/docs/v1/lib/SetStoreCapslockMode.htm
 
