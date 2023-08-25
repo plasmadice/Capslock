@@ -4950,10 +4950,10 @@
       "description": "Hyper Application",
       "manipulators": [
         {
-          "description": "e = Chrome",
+          "description": "t = Chrome",
           "type": "basic",
           "from": {
-            "key_code": "e",
+            "key_code": "t",
             "modifiers": {
               "mandatory": [
                 "right_command",
@@ -5075,10 +5075,10 @@
           ]
         },
         {
-          "description": "t = vscode",
+          "description": "e = vscode",
           "type": "basic",
           "from": {
-            "key_code": "t",
+            "key_code": "e",
             "modifiers": {
               "mandatory": [
                 "right_command",
@@ -5157,28 +5157,7 @@
           ]
         },
         {
-          "description": "option + f = Dictionary",
-          "type": "basic",
-          "from": {
-            "key_code": "f",
-            "modifiers": {
-              "mandatory": [
-                "left_option",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "open -a Dictionary"
-            }
-          ]
-        },
-        {
-          "description": "f = Alfred 5",
+          "description": "f = Raycast",
           "type": "basic",
           "from": {
             "key_code": "f",
@@ -5193,7 +5172,7 @@
           },
           "to": [
             {
-              "shell_command": "open -g -a 'Alfred 5'"
+              "shell_command": "open -a 'Raycast'"
             }
           ]
         }
@@ -7159,6 +7138,36 @@
                 "left_control",
                 "left_shift",
                 "left_option"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Option + Space to vim-anywhere",
+      "manipulators": [
+        {
+          "description": "Option + Space = vim-anywhere",
+          "type": "basic",
+          "from": {
+            "key_code": "spacebar",
+            "modifiers": {
+              "mandatory": [
+                "left_option",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "v",
+              "modifiers": [
+                "left_control",
+                "left_command"
               ]
             }
           ]
