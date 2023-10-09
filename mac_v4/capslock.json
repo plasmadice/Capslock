@@ -5332,126 +5332,58 @@
               ]
             }
           ]
-        },
-        {
-          "description": "command + 4 = copy to clip4",
-          "type": "basic",
-          "from": {
-            "key_code": "4",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "c",
-              "modifiers": [
-                "left_command"
-              ]
-            },
-            {
-              "shell_command": "pbpaste > ~/.clip4"
-            }
-          ]
-        },
-        {
-          "description": "4 = paste from clip4",
-          "type": "basic",
-          "from": {
-            "key_code": "4",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "cat ~/.clip4 | pbcopy"
-            },
-            {
-              "key_code": "vk_none",
-              "hold_down_milliseconds": 100
-            },
-            {
-              "key_code": "v",
-              "modifiers": [
-                "left_command"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "command + 5 = copy to clip5",
-          "type": "basic",
-          "from": {
-            "key_code": "5",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "c",
-              "modifiers": [
-                "left_command"
-              ]
-            },
-            {
-              "shell_command": "pbpaste > ~/.clip5"
-            }
-          ]
-        },
-        {
-          "description": "5 = paste from clip5",
-          "type": "basic",
-          "from": {
-            "key_code": "5",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "cat ~/.clip5 | pbcopy"
-            },
-            {
-              "key_code": "vk_none",
-              "hold_down_milliseconds": 100
-            },
-            {
-              "key_code": "v",
-              "modifiers": [
-                "left_command"
-              ]
-            }
-          ]
         }
       ]
     },
     {
       "description": "Hyper Shifter",
       "manipulators": [
+        {
+          "description": "4 = $",
+          "type": "basic",
+          "from": {
+            "key_code": "4",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "4",
+              "modifiers": [
+                "left_shift"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "5 = %",
+          "type": "basic",
+          "from": {
+            "key_code": "5",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "5",
+              "modifiers": [
+                "left_shift"
+              ]
+            }
+          ]
+        },
         {
           "description": "6 = ^",
           "type": "basic",
@@ -5610,6 +5542,141 @@
               "key_code": "equal_sign",
               "modifiers": [
                 "left_shift"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "command + 6 = hyper + 6",
+          "type": "basic",
+          "from": {
+            "key_code": "6",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "6",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "command + 7 = hyper + 7",
+          "type": "basic",
+          "from": {
+            "key_code": "7",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "7",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "command + 8 = hyper + 8",
+          "type": "basic",
+          "from": {
+            "key_code": "8",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "8",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "command + 9 = hyper + 9",
+          "type": "basic",
+          "from": {
+            "key_code": "9",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "9",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "command + 0 = hyper + 0",
+          "type": "basic",
+          "from": {
+            "key_code": "0",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "0",
+              "modifiers": [
+                "left_command",
+                "left_control",
+                "left_shift",
+                "left_option"
               ]
             }
           ]
@@ -6070,54 +6137,6 @@
           ]
         },
         {
-          "description": "home = illumination_increment",
-          "type": "basic",
-          "from": {
-            "key_code": "home",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "illumination_increment",
-              "modifiers": [
-                "left_shift",
-                "left_option"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "end = illumination_decrement",
-          "type": "basic",
-          "from": {
-            "key_code": "end",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "illumination_decrement",
-              "modifiers": [
-                "left_shift",
-                "left_option"
-              ]
-            }
-          ]
-        },
-        {
           "description": "page_up = volume_increment",
           "type": "basic",
           "from": {
@@ -6414,353 +6433,6 @@
             {
               "key_code": "up_arrow",
               "modifiers": [
-                "left_option"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "Hyper Free Keys",
-      "manipulators": [
-        {
-          "description": "Forward Del + Command + Control + Shift + Option = Custom Hotkey (Double Hyper 0)",
-          "type": "basic",
-          "from": {
-            "key_code": "delete_forward",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "left_control",
-                "left_shift",
-                "left_option",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "keypad_0",
-              "modifiers": [
-                "left_command",
-                "left_control",
-                "left_shift",
-                "left_option"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "Forward Del = Custom Hotkey (Hyper + Del)",
-          "type": "basic",
-          "from": {
-            "key_code": "delete_forward",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "delete_forward",
-              "modifiers": [
-                "left_command",
-                "left_control",
-                "left_shift",
-                "left_option"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "Command + Forward Del = Custom Hotkey (Shift + Command + Del)",
-          "type": "basic",
-          "from": {
-            "key_code": "delete_forward",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "delete_forward",
-              "modifiers": [
-                "left_command",
-                "left_shift"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "Control + Forward Del = Custom Hotkey (Shift + Control + Del)",
-          "type": "basic",
-          "from": {
-            "key_code": "delete_forward",
-            "modifiers": {
-              "mandatory": [
-                "left_control",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "delete_forward",
-              "modifiers": [
-                "left_control",
-                "left_shift"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "Option + Forward Del = Custom Hotkey (Shift + Option + Del)",
-          "type": "basic",
-          "from": {
-            "key_code": "delete_forward",
-            "modifiers": {
-              "mandatory": [
-                "left_option",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "delete_forward",
-              "modifiers": [
-                "left_shift",
-                "left_option"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "Shift + Forward Del = Custom Hotkey (Shift + Del)",
-          "type": "basic",
-          "from": {
-            "key_code": "delete_forward",
-            "modifiers": {
-              "mandatory": [
-                "left_shift",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "delete_forward",
-              "modifiers": [
-                "left_shift"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "Control + Option + Forward Del = Custom Hotkey (Control + Option + keypad_0)",
-          "type": "basic",
-          "from": {
-            "key_code": "delete_forward",
-            "modifiers": {
-              "mandatory": [
-                "left_control",
-                "left_option",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "keypad_0",
-              "modifiers": [
-                "left_control",
-                "left_shift"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "Control + Shift + Forward Del = Custom Hotkey (Control + Shift + keypad_1)",
-          "type": "basic",
-          "from": {
-            "key_code": "delete_forward",
-            "modifiers": {
-              "mandatory": [
-                "left_control",
-                "left_shift",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "keypad_1",
-              "modifiers": [
-                "left_control",
-                "left_shift"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "command + 6 = hyper + 6",
-          "type": "basic",
-          "from": {
-            "key_code": "6",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "6",
-              "modifiers": [
-                "left_command",
-                "left_control",
-                "left_shift",
-                "left_option"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "command + 7 = hyper + 7",
-          "type": "basic",
-          "from": {
-            "key_code": "7",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "7",
-              "modifiers": [
-                "left_command",
-                "left_control",
-                "left_shift",
-                "left_option"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "command + 8 = hyper + 8",
-          "type": "basic",
-          "from": {
-            "key_code": "8",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "8",
-              "modifiers": [
-                "left_command",
-                "left_control",
-                "left_shift",
-                "left_option"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "command + 9 = hyper + 9",
-          "type": "basic",
-          "from": {
-            "key_code": "9",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "9",
-              "modifiers": [
-                "left_command",
-                "left_control",
-                "left_shift",
-                "left_option"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "command + 0 = hyper + 0",
-          "type": "basic",
-          "from": {
-            "key_code": "0",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "0",
-              "modifiers": [
-                "left_command",
-                "left_control",
-                "left_shift",
                 "left_option"
               ]
             }
@@ -7083,156 +6755,6 @@
                 "left_control",
                 "left_shift",
                 "left_option"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "Hyper Logitech G604",
-      "manipulators": [
-        {
-          "description": "G9 -> Hyper",
-          "type": "basic",
-          "from": {
-            "key_code": "1",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "right_shift",
-              "modifiers": [
-                "right_command",
-                "right_control",
-                "right_option"
-              ],
-              "lazy": true
-            }
-          ],
-          "conditions": [
-            {
-              "type": "device_if",
-              "identifiers": [
-                {
-                  "vendor_id": null,
-                  "1133": null
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "description": "G9 -> Hyper + Command",
-          "type": "basic",
-          "from": {
-            "key_code": "2",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "right_shift",
-              "modifiers": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_option"
-              ],
-              "lazy": true
-            }
-          ],
-          "conditions": [
-            {
-              "type": "device_if",
-              "identifiers": [
-                {
-                  "vendor_id": null,
-                  "1133": null,
-                  "product_id": null,
-                  "50489": null
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "description": "G9 -> Hyper + Option",
-          "type": "basic",
-          "from": {
-            "key_code": "3",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "right_shift",
-              "modifiers": [
-                "left_option",
-                "right_command",
-                "right_control",
-                "right_option"
-              ],
-              "lazy": true
-            }
-          ],
-          "conditions": [
-            {
-              "type": "device_if",
-              "identifiers": [
-                {
-                  "vendor_id": null,
-                  "1133": null,
-                  "product_id": null,
-                  "50489": null
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "description": "G9 -> Hyper + Shift",
-          "type": "basic",
-          "from": {
-            "key_code": "4",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "right_shift",
-              "modifiers": [
-                "left_shift",
-                "right_command",
-                "right_control",
-                "right_option"
-              ],
-              "lazy": true
-            }
-          ],
-          "conditions": [
-            {
-              "type": "device_if",
-              "identifiers": [
-                {
-                  "vendor_id": null,
-                  "1133": null,
-                  "product_id": null,
-                  "50489": null
-                }
               ]
             }
           ]
