@@ -1358,10 +1358,10 @@ rules:
       #   from: { key_code: f, modifiers: { mandatory: [ left_option, right_command,right_control,right_shift,right_option ] } }
       #   to: [ { shell_command: open -a Dictionary } ]
 
-      - description: 'f = Raycast'
-        type: basic
-        from: { key_code: f, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a 'Raycast' } ]
+      # - description: 'f = Raycast'
+      #   type: basic
+      #   from: { key_code: f, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { shell_command: open -a 'Raycast' } ]
 
   ################################################################
   #                       Hyper Terminal                         #
@@ -1427,6 +1427,11 @@ rules:
         type: basic
         from: { key_code: u, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: u , modifiers: [ left_control ] } ]
+
+      - description: 'f = ctrl-f - Page Down'
+        type: basic
+        from: { key_code: f, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { key_code: f , modifiers: [ left_control ] } ]
 
       #==========================================================#
       # ( d ) -->  Ctrl-D (EOF)   |  Define                      #
