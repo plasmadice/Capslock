@@ -10,8 +10,6 @@ ModifyAlt := true ; Causes Alt to behave similar to the Command key on macOS
 EnableCapsLock := true ; Enables Capslock as a modifier
 
 ;; The below settings are disabled if EnableCapsLock is false or 0
-EnableCapsLockAlt := true ; Enables Capslock + Alt as a modifier
-; EnableCapsLockWin := false ; Adds mouse controls when holding Capslock + Windows key - Disabled until I find solution to Windows key
 ;;;;;;;;;;;; End Config ;;;;;;;;;;;;;;
 
 ; Tips: Windows Only
@@ -37,6 +35,9 @@ EnableCapsLockAlt := true ; Enables Capslock + Alt as a modifier
 
 ; Experimental. Command simulation using Alt key.
 #if (ModifyAlt = true)
+
+    ; Suppress alt while it is held down, but allow for keypresses
+
     !Backspace::Send {AltUp}+{Home}+{Home}{BackSpace}{AltDown} ; Delete till line head
     !s::Send, {AltUp}^{s}{AltDown} ; Save
     !a::Send, {AltUp}^{a}{AltDown} ; Select All
@@ -76,26 +77,64 @@ EnableCapsLockAlt := true ; Enables Capslock + Alt as a modifier
             if (OldClass <> "CabinetWClass" or NewClass = "CabinetWClass")
                 break
         }
+
+    ; Alt Modifier
+    #if (EnableCapsLock = true and GetKeystate("CapsLock", "P") and GetKeyState("LAlt", "P"))
+
+    ;
+    ;
+    ; Alt Cursor Movement h::+Left ; Select Left j::+Down k::+Up
+    l::+Right
+    ; Alt Far Select Movement
+    g::+^Left
+    '::+^Right
+    ; Start / End of Line
+    i::+Home ; Select to Start of Line
+    o::+End ; Select to End of Line
+
+    ;
+    ;
+    ; Alt Window Control
+    s::^PgUp ; Previous Tab
+    t::^+t ; Reopen Tab or Window
+    w::!F4 ; Close App
+
+    ;
+    ;
+    ; Alt Text Deletion
+    n::Send +{Home}{BackSpace} ; Delete till line head
+    m::^Backspace ; Delete a word ahead
+    ,::^Delete ; Delete a word after
+    .::Send +{End}{Backspace} ; Delete till line end
+    Backspace::Send +{End}{Backspace} ; Delete till line end
+
+    ;
+    ;
+    ; Alt App Shortcuts
+
+    ;
+    ;
+    ; Mouse Movements
+
+    #if ; End of Alt modifier
 #if
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 *CapsLock::
     KeyWait, CapsLock
+   
+    ; MsgBox %A_ThisHotkey% 
+
     IF A_ThisHotkey = *CapsLock
         ; Send, {CapsLock Up}
+        
         Send, {Escape} ; Press escape if Capslock is pressed and released without any other key
 Return
 +CapsLock::CapsLock ; Press Shift + Capslock to toggle Capslock
-; Release all modifiers
-; *CapsLock Up::
-;     Send, {LShift Up}
-;     Send, {LControl Up}
-;     Send, {LAlt Up}
-;     Send, {LWin Up}
 
-~Space & CapsLock Up::Send, {LWin Up}
+; ~Space & CapsLock Up::Send, {LWin Up} ; Not sure this is useful
 
-#if (EnableCapsLock = true and GetKeyState("CapsLock", "P") and not GetKeyState("LAlt", "P") and not GetKeyState("LWin", "P")) ; Start of Capslock modifier
+#if (EnableCapsLock = true and GetKeyState("CapsLock", "P") and !GetKeyState("LAlt", "P") and !GetKeyState("LWin", "P")) ; Start of Capslock modifier
     Escape::CapsLock ; Press Capslock + Escape to toggle Capslock
     Shift::CapsLock ; Press Capslock + Shift to toggle Capslock
 
@@ -170,6 +209,7 @@ Return
     Space::
         Send, {LWin Down}
         KeyWait, Space
+        
         ; MsgBox %A_ThisHotkey%
         IF A_ThisHotkey = *h
             Send, {Left} ; Move window left
@@ -201,65 +241,3 @@ Return
     LWin Up::return
 
 #if ; End of Capslock modifier
-
-; Alt Modifier
-#if (EnableCapsLock = true and EnableCapsLockAlt = true and GetKeystate("CapsLock", "P") and GetKeyState("LAlt", "P") and not GetKeyState("LWin", "P"))
-
-    ;
-    ;
-    ; Alt Cursor Movement h::+Left ; Select Left j::+Down k::+Up
-    l::+Right
-    ; Alt Far Select Movement
-    g::+^Left
-    '::+^Right
-    ; Start / End of Line
-    i::+Home ; Select to Start of Line
-    o::+End ; Select to End of Line
-
-    ;
-    ;
-    ; Alt Window Control
-    s::^PgUp ; Previous Tab
-    t::^+t ; Reopen Tab or Window
-    w::!F4 ; Close App
-
-    ;
-    ;
-    ; Alt Text Deletion
-    n::Send +{Home}{BackSpace} ; Delete till line head
-    m::^Backspace ; Delete a word ahead
-    ,::^Delete ; Delete a word after
-    .::Send +{End}{Backspace} ; Delete till line end
-    Backspace::Send +{End}{Backspace} ; Delete till line end
-
-;
-;
-; Alt App Shortcuts
-
-;
-;
-; Mouse Movements
-
-#if ; End of Alt modifier
-
-; Win Only modifier
-#if (EnableCapsLock = true and EnableCapsLockWin = true and GetKeystate("CapsLock", "P") and GetKeyState("LWin", "P") and not GetKeyState("LAlt", "P"))
-    ;
-    ;
-    ; Win Mouse Control
-    ; TODO: Find solution to Capslock + Win + L locking Windows
-    o::Send, {LWinUp}{XButton1}
-    p::Send, {LWinUp}{XButton2}
-    ; i::Send, {LWinUp}{Click Right}
-    ; u::Send, {LWinUp}{Click Left}
-
-    ;
-    ;
-    ; Window Control
-    ; h::Send, {LWinUp}#{Left}
-    ; j::Send, {LWinUp}#{Down}
-    ; k::Send, {LWinUp}#{Up}
-    ; l::Send, {LWinUp}#{Right}
-    ; u::Send, {LWinUp}#{Up 2}
-
-#if ; End of Win modifier
