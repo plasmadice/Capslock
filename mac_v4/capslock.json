@@ -4929,7 +4929,7 @@
           ]
         },
         {
-          "description": "f = ctrl-f - Page Down",
+          "description": "f = open Figma",
           "type": "basic",
           "from": {
             "key_code": "f",
@@ -4944,10 +4944,7 @@
           },
           "to": [
             {
-              "key_code": "f",
-              "modifiers": [
-                "left_control"
-              ]
+              "shell_command": "open -a Figma"
             }
           ]
         },

@@ -1428,10 +1428,10 @@ rules:
         from: { key_code: u, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: u , modifiers: [ left_control ] } ]
 
-      - description: 'f = ctrl-f - Page Down'
+      - description: 'f = open Figma'
         type: basic
         from: { key_code: f, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: f , modifiers: [ left_control ] } ]
+        to: [ { shell_command: open -a Figma } ]
 
       #==========================================================#
       # ( d ) -->  Ctrl-D (EOF)   |  Define                      #
