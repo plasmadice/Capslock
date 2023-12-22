@@ -1345,10 +1345,10 @@ rules:
         from: { key_code: y, modifiers: { mandatory: [ left_option, right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: open -a amphetamine } ]
 
-      - description: 'y = Siri'
+      - description: 'y = Slack'
         type: basic
         from: { key_code: y, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a Siri } ]
+        to: [ { shell_command: open -a Slack } ]
 
       #==========================================================#
       # ( f ) --> Raycast / Dictionary                   #
