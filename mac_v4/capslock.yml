@@ -1296,6 +1296,11 @@ rules:
         from: { key_code: e, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: open -a 'Arc' } ]
 
+      - description: 'e + ctrl = Google Chrome'
+        type: basic
+        from: { key_code: e, modifiers: { mandatory: [ left_control, right_command,right_control,right_shift,right_option ] } }
+        to: [ { shell_command: open -a 'Google Chrome' } ]
+
       - description: 'e + command = Obsidian'
         type: basic
         from: { key_code: e, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
@@ -1305,6 +1310,16 @@ rules:
         type: basic
         from: { key_code: e, modifiers: { mandatory: [ left_option, right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: open -a 'Discord' } ]
+
+      # - description: 'f = open Figma'
+      #   type: basic
+      #   from: { key_code: f, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { shell_command: open -a Figma } ]
+      
+      - description: 'F8 = Spotify'
+        type: basic
+        from: { consumer_key_code: play_or_pause, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+        to: [ { shell_command: open -a Spotify } ]
 
       #==========================================================#
       # ( r ) --> iterm / preview / terminal                     #
@@ -1427,11 +1442,6 @@ rules:
         type: basic
         from: { key_code: u, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: u , modifiers: [ left_control ] } ]
-
-      - description: 'f = open Figma'
-        type: basic
-        from: { key_code: f, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a Figma } ]
 
       #==========================================================#
       # ( d ) -->  Ctrl-D (EOF)   |  Define                      #
@@ -2087,10 +2097,10 @@ rules:
         from: { consumer_key_code: scan_previous_track, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: f7, modifiers: [ left_command,left_control,left_shift,left_option ] } ]
       
-      - description: 'F8 (play_or_pause) = Hyper + f8'
-        type: basic
-        from: { consumer_key_code: play_or_pause, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: f8, modifiers: [ left_command,left_control,left_shift,left_option ] } ]
+      # - description: 'F8 (play_or_pause) = Hyper + f8'
+      #   type: basic
+      #   from: { consumer_key_code: play_or_pause, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { key_code: f8, modifiers: [ left_command,left_control,left_shift,left_option ] } ]
 
       - description: 'F9 (play_or_pause) = Hyper + f9'
         type: basic
