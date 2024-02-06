@@ -4607,6 +4607,27 @@
           ]
         },
         {
+          "description": "f = open Figma",
+          "type": "basic",
+          "from": {
+            "key_code": "f",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a Figma"
+            }
+          ]
+        },
+        {
           "description": "F8 = Spotify",
           "type": "basic",
           "from": {
@@ -4776,31 +4797,6 @@
     {
       "description": "Hyper Terminal and Editor",
       "manipulators": [
-        {
-          "description": "command + f = find (cmd + shift + f)",
-          "type": "basic",
-          "from": {
-            "key_code": "f",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "f",
-              "modifiers": [
-                "left_command",
-                "left_shift"
-              ]
-            }
-          ]
-        },
         {
           "description": "option + f = clean formatting (option + shift + f)",
           "type": "basic",
