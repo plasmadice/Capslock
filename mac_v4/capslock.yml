@@ -1311,7 +1311,7 @@ rules:
         from: { key_code: e, modifiers: { mandatory: [ left_option, right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: open -a 'Discord' } ]
 
-      - description: 'f = open Figma'
+      - description: 'f + cmd = open Figma'
         type: basic
         from: { key_code: f, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: open -a Figma } ]
@@ -1320,6 +1320,11 @@ rules:
         type: basic
         from: { consumer_key_code: play_or_pause, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: open -a Spotify } ]
+
+      - description: 'd + cmd = Dash'
+        type: basic
+        from: { key_code: d, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
+        to: [ { shell_command: open -a Dash } ]
 
       #==========================================================#
       # ( r ) --> iterm / preview / terminal                     #
