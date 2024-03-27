@@ -4607,7 +4607,7 @@
           ]
         },
         {
-          "description": "f = open Figma",
+          "description": "f + cmd = open Figma",
           "type": "basic",
           "from": {
             "key_code": "f",
@@ -4894,7 +4894,7 @@
           ]
         },
         {
-          "description": "~ = open Chrome developer console",
+          "description": "~ = General Terminal (mapped)",
           "type": "basic",
           "from": {
             "key_code": "grave_accent_and_tilde",
@@ -4909,7 +4909,7 @@
           },
           "to": [
             {
-              "key_code": "j",
+              "key_code": "i",
               "modifiers": [
                 "left_command",
                 "left_option"
