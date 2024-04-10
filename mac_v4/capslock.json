@@ -4544,7 +4544,7 @@
           ]
         },
         {
-          "description": "e + ctrl = Google Chrome",
+          "description": "e + ctrl = Discord",
           "type": "basic",
           "from": {
             "key_code": "e",
@@ -4560,12 +4560,12 @@
           },
           "to": [
             {
-              "shell_command": "open -a 'Google Chrome'"
+              "shell_command": "open -a 'Discord'"
             }
           ]
         },
         {
-          "description": "e + command = Obsidian",
+          "description": "e + command = Chrome",
           "type": "basic",
           "from": {
             "key_code": "e",
@@ -4581,12 +4581,12 @@
           },
           "to": [
             {
-              "shell_command": "open -a 'Obsidian'"
+              "shell_command": "open -a 'Google Chrome'"
             }
           ]
         },
         {
-          "description": "e + option = Discord",
+          "description": "e + option = Safari",
           "type": "basic",
           "from": {
             "key_code": "e",
@@ -4602,7 +4602,7 @@
           },
           "to": [
             {
-              "shell_command": "open -a 'Discord'"
+              "shell_command": "open -a 'Safari'"
             }
           ]
         },
@@ -4624,26 +4624,6 @@
           "to": [
             {
               "shell_command": "open -a Figma"
-            }
-          ]
-        },
-        {
-          "description": "F8 = Spotify",
-          "type": "basic",
-          "from": {
-            "consumer_key_code": "play_or_pause",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "open -a Spotify"
             }
           ]
         },

@@ -1296,30 +1296,25 @@ rules:
         from: { key_code: e, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: open -a 'Arc' } ]
 
-      - description: 'e + ctrl = Google Chrome'
+      - description: 'e + ctrl = Discord'
         type: basic
         from: { key_code: e, modifiers: { mandatory: [ left_control, right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a 'Google Chrome' } ]
+        to: [ { shell_command: open -a 'Discord' } ]
 
-      - description: 'e + command = Obsidian'
+      - description: 'e + command = Chrome'
         type: basic
         from: { key_code: e, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a 'Obsidian' } ]
+        to: [ { shell_command: open -a 'Google Chrome' } ]
 
-      - description: 'e + option = Discord'
+      - description: 'e + option = Safari'
         type: basic
         from: { key_code: e, modifiers: { mandatory: [ left_option, right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a 'Discord' } ]
+        to: [ { shell_command: open -a 'Safari' } ]
 
       - description: 'f + cmd = open Figma'
         type: basic
         from: { key_code: f, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: open -a Figma } ]
-      
-      - description: 'F8 = Spotify'
-        type: basic
-        from: { consumer_key_code: play_or_pause, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a Spotify } ]
 
       - description: 'd + cmd = Dash'
         type: basic
