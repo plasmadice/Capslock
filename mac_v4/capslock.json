@@ -4628,7 +4628,7 @@
           ]
         },
         {
-          "description": "d + cmd = Dash",
+          "description": "d + cmd = Obsidian",
           "type": "basic",
           "from": {
             "key_code": "d",
@@ -4644,7 +4644,7 @@
           },
           "to": [
             {
-              "shell_command": "open -a Dash"
+              "shell_command": "open -a Obsidian"
             }
           ]
         },
@@ -6748,6 +6748,26 @@
                 "left_shift",
                 "left_option"
               ]
+            }
+          ]
+        },
+        {
+          "description": "F20 (Set microphone volume to 100) = Set volume to 100",
+          "type": "basic",
+          "from": {
+            "key_code": "f20",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "osascript -e \"set volume input volume 100\""
             }
           ]
         }
