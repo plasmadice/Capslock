@@ -65,7 +65,7 @@
           ]
         },
         {
-          "description": "command + spacebar = emoji",
+          "description": "command + spacebar = rewind.ai",
           "type": "basic",
           "from": {
             "key_code": "spacebar",
@@ -83,6 +83,7 @@
             {
               "key_code": "spacebar",
               "modifiers": [
+                "left_shift",
                 "left_control",
                 "left_command"
               ]
@@ -4264,48 +4265,6 @@
           ]
         },
         {
-          "description": "shift + w = sleep",
-          "type": "basic",
-          "from": {
-            "key_code": "w",
-            "modifiers": {
-              "mandatory": [
-                "left_shift",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "pmset sleepnow"
-            }
-          ]
-        },
-        {
-          "description": "option + w = display sleep",
-          "type": "basic",
-          "from": {
-            "key_code": "w",
-            "modifiers": {
-              "mandatory": [
-                "left_option",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "pmset displaysleepnow"
-            }
-          ]
-        },
-        {
           "description": "command + w = close all tab of app",
           "type": "basic",
           "from": {
@@ -4524,7 +4483,7 @@
       "description": "Hyper Application",
       "manipulators": [
         {
-          "description": "e = Arc Browser",
+          "description": "e = Vivaldi",
           "type": "basic",
           "from": {
             "key_code": "e",
@@ -4539,7 +4498,7 @@
           },
           "to": [
             {
-              "shell_command": "open -a 'Arc'"
+              "shell_command": "open -a vivaldi"
             }
           ]
         },
@@ -4565,7 +4524,7 @@
           ]
         },
         {
-          "description": "e + command = Chrome",
+          "description": "e + command = unGoogled Chromium",
           "type": "basic",
           "from": {
             "key_code": "e",
@@ -4581,7 +4540,7 @@
           },
           "to": [
             {
-              "shell_command": "open -a 'Google Chrome'"
+              "shell_command": "open -a 'Chromium'"
             }
           ]
         },
@@ -4649,7 +4608,7 @@
           ]
         },
         {
-          "description": "command + r = preview",
+          "description": "command + r = ghostty",
           "type": "basic",
           "from": {
             "key_code": "r",
@@ -4665,7 +4624,7 @@
           },
           "to": [
             {
-              "shell_command": "open -a Preview"
+              "shell_command": "open -a ghostty"
             }
           ]
         },
@@ -5078,30 +5037,6 @@
               "key_code": "r",
               "modifiers": [
                 "left_control"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "command + c = shift + F5 (vscode stop)",
-          "type": "basic",
-          "from": {
-            "key_code": "c",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "f5",
-              "modifiers": [
-                "left_shift"
               ]
             }
           ]
@@ -6459,10 +6394,10 @@
       ]
     },
     {
-      "description": "Option + Space to vim-anywhere",
+      "description": "Option + Space to emoji",
       "manipulators": [
         {
-          "description": "Option + Space = vim-anywhere",
+          "description": "Option + Space = emoji",
           "type": "basic",
           "from": {
             "key_code": "spacebar",
@@ -6478,7 +6413,7 @@
           },
           "to": [
             {
-              "key_code": "v",
+              "key_code": "spacebar",
               "modifiers": [
                 "left_control",
                 "left_command"
@@ -6648,32 +6583,6 @@
           ]
         },
         {
-          "description": "F9 (play_or_pause) = Hyper + f9",
-          "type": "basic",
-          "from": {
-            "consumer_key_code": "scan_next_track",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "f9",
-              "modifiers": [
-                "left_command",
-                "left_control",
-                "left_shift",
-                "left_option"
-              ]
-            }
-          ]
-        },
-        {
           "description": "F10 (mute) = Hyper + f10",
           "type": "basic",
           "from": {
@@ -6748,26 +6657,6 @@
                 "left_shift",
                 "left_option"
               ]
-            }
-          ]
-        },
-        {
-          "description": "F20 (Set microphone volume to 100) = Set volume to 100",
-          "type": "basic",
-          "from": {
-            "key_code": "f20",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "osascript -e \"set volume input volume 100\""
             }
           ]
         }

@@ -29,10 +29,10 @@ rules:
       #   from: { key_code: spacebar, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
       #   to: [ { key_code: spacebar , modifiers: [ left_control ] } ]
 
-      - description: 'command + spacebar = emoji'
+      - description: 'command + spacebar = rewind.ai'
         type: basic
         from: { key_code: spacebar, modifiers: { mandatory: [ left_command,  right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: spacebar , modifiers: [ left_control,left_command ] } ]
+        to: [ { key_code: spacebar , modifiers: [ left_shift,left_control,left_command ] } ]
 
 
   ################################################################
@@ -1215,15 +1215,15 @@ rules:
       #==========================================================#
       # ( w ) --> close tab                                      #
       #==========================================================#
-      - description: 'shift + w = sleep'
-        type: basic
-        from: { key_code: w, modifiers: { mandatory: [ left_shift,  right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: pmset sleepnow } ]
+      # - description: 'shift + w = sleep'
+      #   type: basic
+      #   from: { key_code: w, modifiers: { mandatory: [ left_shift,  right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { shell_command: pmset sleepnow } ]
 
-      - description: 'option + w = display sleep'
-        type: basic
-        from: { key_code: w, modifiers: { mandatory: [ left_option,  right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: pmset displaysleepnow } ]
+      # - description: 'option + w = display sleep'
+      #   type: basic
+      #   from: { key_code: w, modifiers: { mandatory: [ left_option,  right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { shell_command: pmset displaysleepnow } ]
 
       - description: 'command + w = close all tab of app'
         type: basic
@@ -1291,20 +1291,20 @@ rules:
 
 
       # Customs #
-      - description: 'e = Arc Browser'
+      - description: 'e = Vivaldi'
         type: basic
         from: { key_code: e, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a 'Arc' } ]
+        to: [ { shell_command: open -a vivaldi } ]
 
       - description: 'e + ctrl = Discord'
         type: basic
         from: { key_code: e, modifiers: { mandatory: [ left_control, right_command,right_control,right_shift,right_option ] } }
         to: [ { shell_command: open -a 'Discord' } ]
 
-      - description: 'e + command = Chrome'
+      - description: 'e + command = unGoogled Chromium'
         type: basic
         from: { key_code: e, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a 'Google Chrome' } ]
+        to: [ { shell_command: open -a 'Chromium' } ]
 
       - description: 'e + option = Safari'
         type: basic
@@ -1322,12 +1322,12 @@ rules:
         to: [ { shell_command: open -a Obsidian } ]
 
       #==========================================================#
-      # ( r ) --> iterm / preview / terminal                     #
+      # ( r ) --> ghostty / preview / terminal                     #
       #==========================================================#
-      - description: 'command + r = preview'
+      - description: 'command + r = ghostty'
         type: basic
         from: { key_code: r, modifiers: { mandatory: [ left_command, right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: open -a Preview } ]
+        to: [ { shell_command: open -a ghostty } ]
 
       - description: 'option + r = terminal'
         type: basic
@@ -1481,10 +1481,10 @@ rules:
       #==========================================================#
       # ( c ) -->  Ctrl-C (SIGINT)  |  Shift+F5 (VS Code Stop)   #
       #==========================================================#
-      - description: 'command + c = shift + F5 (vscode stop)'
-        type: basic
-        from: { key_code: c, modifiers: { mandatory: [ left_command,  right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: f5 , modifiers: [ left_shift ] } ]
+      # - description: 'command + c = shift + F5 (vscode stop)'
+      #   type: basic
+      #   from: { key_code: c, modifiers: { mandatory: [ left_command,  right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { key_code: f5 , modifiers: [ left_shift ] } ]
 
       - description: 'c = ctrl-c'
         type: basic
@@ -2043,15 +2043,15 @@ rules:
   #       to_if_alone: [ { key_code: return_or_enter, lazy: true } ]
 
   ################################################################
-  #        Command + Space to vim-anywhere trigger https://github.com/cknadler/vim-anywhere             #
+  #        Command + Space to emoji
   ################################################################
-  - description: Option + Space to vim-anywhere
+  - description: Option + Space to emoji
     manipulators:
 
-      - description: 'Option + Space = vim-anywhere'
+      - description: 'Option + Space = emoji'
         type: basic
         from: { key_code: spacebar, modifiers: { mandatory: [ left_option, right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: v, modifiers: [ left_control, left_command ] } ]
+        to: [ { key_code: spacebar , modifiers: [ left_control,left_command ] } ]
 
 
   ################################################################
@@ -2102,10 +2102,10 @@ rules:
       #   from: { consumer_key_code: play_or_pause, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
       #   to: [ { key_code: f8, modifiers: [ left_command,left_control,left_shift,left_option ] } ]
 
-      - description: 'F9 (play_or_pause) = Hyper + f9'
-        type: basic
-        from: { consumer_key_code: scan_next_track, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { key_code: f9, modifiers: [ left_command,left_control,left_shift,left_option ] } ]
+      # - description: 'F9 (play_or_pause) = Hyper + f9'
+      #   type: basic
+      #   from: { consumer_key_code: scan_next_track, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { key_code: f9, modifiers: [ left_command,left_control,left_shift,left_option ] } ]
 
       - description: 'F10 (mute) = Hyper + f10'
         type: basic
@@ -2122,10 +2122,10 @@ rules:
         from: { consumer_key_code: volume_increment, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
         to: [ { key_code: f12, modifiers: [ left_command,left_control,left_shift,left_option ] } ]
 
-      - description: 'F20 (Set microphone volume to 100) = Set volume to 100'
-        type: basic
-        from: { key_code: f20, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
-        to: [ { shell_command: osascript -e "set volume input volume 100" } ]
+      # - description: 'F20 (Set microphone volume to 100) = Set volume to 100'
+      #   type: basic
+      #   from: { key_code: f20, modifiers: { mandatory: [ right_command,right_control,right_shift,right_option ] } }
+      #   to: [ { shell_command: osascript -e "set volume input volume 100" } ]
 
   # ################################################################
   # #                       Hyper Logitech G604                    #
