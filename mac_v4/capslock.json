@@ -4483,26 +4483,6 @@
       "description": "Hyper Application",
       "manipulators": [
         {
-          "description": "e = Vivaldi",
-          "type": "basic",
-          "from": {
-            "key_code": "e",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "open -a vivaldi"
-            }
-          ]
-        },
-        {
           "description": "e + ctrl = Discord",
           "type": "basic",
           "from": {
@@ -4520,27 +4500,6 @@
           "to": [
             {
               "shell_command": "open -a 'Discord'"
-            }
-          ]
-        },
-        {
-          "description": "e + command = unGoogled Chromium",
-          "type": "basic",
-          "from": {
-            "key_code": "e",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "open -a 'Chromium'"
             }
           ]
         },
@@ -4671,26 +4630,6 @@
           ]
         },
         {
-          "description": "t = vscode",
-          "type": "basic",
-          "from": {
-            "key_code": "t",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "open -a 'Visual Studio Code'"
-            }
-          ]
-        },
-        {
           "description": "command + y = karabiner",
           "type": "basic",
           "from": {
@@ -4729,26 +4668,6 @@
           "to": [
             {
               "shell_command": "open -a amphetamine"
-            }
-          ]
-        },
-        {
-          "description": "y = Slack",
-          "type": "basic",
-          "from": {
-            "key_code": "y",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "open -a Slack"
             }
           ]
         }
@@ -5285,14 +5204,36 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "Hyper Shifter",
-      "manipulators": [
+        },
         {
-          "description": "4 = $",
+          "description": "command + 4 = copy to clip4",
+          "type": "basic",
+          "from": {
+            "key_code": "4",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "c",
+              "modifiers": [
+                "left_command"
+              ]
+            },
+            {
+              "shell_command": "pbpaste > ~/.clip4"
+            }
+          ]
+        },
+        {
+          "description": "4 = paste from clip4",
           "type": "basic",
           "from": {
             "key_code": "4",
@@ -5307,36 +5248,25 @@
           },
           "to": [
             {
-              "key_code": "4",
-              "modifiers": [
-                "left_shift"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "5 = %",
-          "type": "basic",
-          "from": {
-            "key_code": "5",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
+              "shell_command": "cat ~/.clip4 | pbcopy"
+            },
             {
-              "key_code": "5",
+              "key_code": "vk_none",
+              "hold_down_milliseconds": 100
+            },
+            {
+              "key_code": "v",
               "modifiers": [
-                "left_shift"
+                "left_command"
               ]
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "description": "Hyper Shifter",
+      "manipulators": [
         {
           "description": "6 = ^",
           "type": "basic",
@@ -6046,26 +5976,6 @@
           ]
         },
         {
-          "description": "ScrollLock = screen video capture",
-          "type": "basic",
-          "from": {
-            "key_code": "f15",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "play_or_pause"
-            }
-          ]
-        },
-        {
           "description": "insert = display_brightness_increment",
           "type": "basic",
           "from": {
@@ -6427,110 +6337,6 @@
       "description": "Hyper Media Keys",
       "manipulators": [
         {
-          "description": "F1 (f1) = Hyper + f1",
-          "type": "basic",
-          "from": {
-            "key_code": "f1",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "f1",
-              "modifiers": [
-                "left_command",
-                "left_control",
-                "left_shift",
-                "left_option"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "F1 (f1) = Hyper + f1",
-          "type": "basic",
-          "from": {
-            "key_code": "f2",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "f2",
-              "modifiers": [
-                "left_command",
-                "left_control",
-                "left_shift",
-                "left_option"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "F2 (f2) = Hyper + f2",
-          "type": "basic",
-          "from": {
-            "key_code": "f3",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "f3",
-              "modifiers": [
-                "left_command",
-                "left_control",
-                "left_shift",
-                "left_option"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "F4 (f4) = Hyper + f4",
-          "type": "basic",
-          "from": {
-            "key_code": "f4",
-            "modifiers": {
-              "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "f4",
-              "modifiers": [
-                "left_command",
-                "left_control",
-                "left_shift",
-                "left_option"
-              ]
-            }
-          ]
-        },
-        {
           "description": "F6 (f6) = Hyper + f6",
           "type": "basic",
           "from": {
@@ -6572,13 +6378,47 @@
           },
           "to": [
             {
-              "key_code": "f7",
-              "modifiers": [
-                "left_command",
-                "left_control",
-                "left_shift",
-                "left_option"
+              "key_code": "f18"
+            }
+          ]
+        },
+        {
+          "description": "F8 (play_or_pause) = Hyper + f8",
+          "type": "basic",
+          "from": {
+            "consumer_key_code": "play_or_pause",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
               ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'music'"
+            }
+          ]
+        },
+        {
+          "description": "F9 (play_or_pause) = Hyper + f9",
+          "type": "basic",
+          "from": {
+            "consumer_key_code": "scan_next_track",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f19"
             }
           ]
         },
